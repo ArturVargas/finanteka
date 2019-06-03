@@ -1,4 +1,47 @@
+<app-navbar></app-navbar>
 
-<p>
-    Register Works..!
-</p>
+<div class="container">
+  <div class="my-5 ml-auto">
+    <form action="">
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Nombre</mat-label>
+          <input matInput placeholder="Nombre">
+          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
+          <mat-hint>Tú nombre</mat-hint>
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Correo Electronico</mat-label>
+          <input matInput placeholder="Correo" required> <!--formcontrol=email -->
+          <mat-icon matSuffix>email</mat-icon>
+          <mat-hint>Tú correo</mat-hint>
+          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+        </mat-form-field>
+      </div>
+      <div class="form-group">
+        <mat-form-field appearance="outline">
+          <mat-label>Contraseña</mat-label>
+          <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+        </mat-form-field>  
+      </div>
+      <div class="form-group">
+        <mat-checkbox>Acepto los Términos y Condiciones</mat-checkbox>
+      </div>
+      <div class="d-flex justify-content-start mb-3">
+        <button mat-raised-button color="primary">
+          Crear Cuenta
+        </button>
+      </div>
+      <div class="d-flex justify-content-start">
+        <button mat-raised-button color="accent" routerLink='/login'>
+          Ya tengo una cuenta
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
