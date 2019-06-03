@@ -1,14 +1,16 @@
-# Finantk
+# Finanteka
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.0.1.
+Proyecto para Startup Finanteka:
+Registro de Proyectos a Financear y Registro de Inversionistas
 
-## Development server
+## Angular 8
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Para correr el proyecto `ng serve` en servidor de desarrollo. Navegar a `http://localhost:4200/`. La aplicación se Recarga Automaticamente al guardar los cambios.
 
-## Code scaffolding
+## Clonar este Repo
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+`git clone` `https://github.com/ArturVargas/finanteka.git`
+Instalar Dependencias con `npm install`
 
 ## Build
 
@@ -22,6 +24,9 @@ Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.
 
 Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
+## Documentación Necesaria
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+* [Angular Material](https://material.angular.io/)
+* [Material Design](https://material.io/)
+* [Angular](https://angular.io/)
+
