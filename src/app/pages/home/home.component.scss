@@ -74,8 +74,8 @@ header {
 
 .contenedor.back {
     color: white;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    padding-top: 80px !important;
+    padding-bottom: 80px !important;
     background-color: rgb(210, 67, 84); 
     background-color: rgb(77, 72, 182); 
     background-image: url("../../../assets/img/backs/bg-girl-02.jpg"); 
@@ -129,28 +129,64 @@ header {
     }
 }
 
-.contenedor.back::before {
-    background-image: url(../../shared/../../assets/img/backs/olaLight.png);
-    background-blend-mode: multiply;
-    background-size: cover;
-    bottom: -0.0625rem;
-    content: "";
-    left: 0;
-    height: 3.75rem;
-    position: absolute;
-    width: 100%;
+.contenedor.olaTopLight {
+    padding-top: 60px;
+    &::before {
+        transform: rotate(180deg);
+        background-image: url(../../shared/../../assets/img/backs/olaLight.png);
+        background-size: cover;
+        top: -0.0625rem;
+        content: "";
+        left: 0;
+        height: 3.75rem;
+        position: absolute;
+        width: 100%;
+    }
 }
 
-.contenedor.back::after {
-    transform: rotate(180deg);
-    background-image: url(../../shared/../../assets/img/backs/olaLightGrey.png);
-    background-size: cover;
-    top: -0.0625rem;
-    content: "";
-    left: 0;
-    height: 3.75rem;
-    position: absolute;
-    width: 100%;
+.contenedor.olaTopLight2 {
+    padding-top: 60px;
+    &::before {
+        transform: rotate(180deg);
+        background-image: url(../../shared/../../assets/img/backs/olaLightGrey.png);
+        background-size: cover;
+        top: -0.0625rem;
+        content: "";
+        left: 0;
+        height: 3.75rem;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.contenedor.olaBottomLight {
+    padding-bottom: 60px;
+    &::after {
+        background-image: url(../../shared/../../assets/img/backs/olaLight.png);
+        background-blend-mode: multiply;
+        background-size: cover;
+        bottom: -0.0625rem;
+        content: "";
+        left: 0;
+        height: 3.75rem;
+        position: absolute;
+        width: 100%;
+    }
+}
+
+.contenedor.olaBottomLight2 {
+    padding-bottom: 60px;
+    &::after {
+        background-image: url(../../shared/../../assets/img/backs/olaLightGrey.png);
+        background-blend-mode: multiply;
+        background-size: cover;
+        bottom: -0.0625rem;
+        content: "";
+        left: 0;
+        height: 3.75rem;
+        position: absolute;
+        width: 100%;
+    }
 }
 
 @media screen and (max-width: 775px) {
