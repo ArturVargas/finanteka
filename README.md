@@ -29,4 +29,5 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 * [Angular Material](https://material.angular.io/)
 * [Material Design](https://material.io/)
 * [Angular](https://angular.io/)
+* [Ng2-charts](https://valor-software.com/ng2-charts/#BarChart)
 
