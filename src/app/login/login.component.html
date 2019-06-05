@@ -1,15 +1,46 @@
-<app-navbar></app-navbar>
+<header>
 
+</header>
+
+<div id="formSpace">
+  <div class="cnt">
+      <img src="../../assets/img/finantekaPurple.svg" height="40" alt="" srcset="">
+      <p>Bienvenido de nuevo, por favor ingresa con tu cuenta</p>
+      <form action="">
+        <div class="g">
+          <input type="text" name="email" placeholder="Correo Electrónico" id="">
+          <input type="text" name="password" placeholder="Contraseña" id="">
+        </div>
+        <div class="options">
+          <div class="rem">
+            <input type="checkbox" name="rememberme" id=""> 
+            <span>Recuérdame</span>
+          </div>
+          <div class="for">
+            <a href="#">Olvidé mi contraseña</a>
+          </div>
+        </div>
+        <div class="buttons">
+          <button class="done">Ingresar</button>
+          <button style="color: #43425D;" routerLink='/register'>Regístrame</button>
+        </div>
+      </form>
+  </div>
+  <a class="tu" href="#">Términos de uso y política de privacidad</a>
+</div>
+
+<!--
 <div class="container">
   <div class="my-5 ml-auto">
     <form action="">
       <div class="form-group">
         <mat-form-field appearance="outline">
           <mat-label>Correo Electronico</mat-label>
-          <input matInput placeholder="Correo" required> <!--formcontrol=email -->
+          <input matInput placeholder="Correo" required>
           <mat-icon matSuffix>email</mat-icon>
           <mat-hint>Tú correo</mat-hint>
           <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
+          <!--
         </mat-form-field>
       </div>
       <div class="form-group">
@@ -35,3 +66,5 @@
     </form>
   </div>
 </div>
+
+-->

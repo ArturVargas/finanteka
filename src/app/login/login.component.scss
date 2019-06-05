@@ -1,0 +1,96 @@
+header {
+    width: 50%;
+    height: 100%;
+    position: absolute;
+    background-color: rgb(210, 67, 84); 
+    background-color: rgb(77, 72, 182); 
+    background-image: url("../../assets/img/backs/bg-girl-02.jpg"); 
+    background-blend-mode: multiply;
+    background-position: top;
+    background-size: cover;
+}
+
+#formSpace {
+    top: 0px;
+    right: 0px;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    text-align: center;
+    position: absolute;
+    .cnt > img {
+        margin-bottom: 12px;
+    }
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+    color: rgb(140, 143, 160);
+}
+
+.g {
+    input[type="text"],
+    input[type="password"] {
+        width: 100%;
+        outline: none;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 5px;
+        padding-right: 5px;
+        padding-bottom: 6px;
+        margin-bottom: 14px;
+        border: solid 0;
+        box-sizing: border-box;
+        border-bottom: solid 2px rgb(213, 214, 219);
+    }
+}
+
+.options {
+    height: 42px;
+    .rem {
+        float: left;
+        color: rgb(77, 72, 182);
+        input {
+            width: 30px;
+        }
+        span {
+            cursor: default;
+            font-size: 16px;
+            font-weight: 600;
+            display: inline-block;
+        }
+    }
+    .for {
+        float: right;
+        a {
+            font-size: 16px;
+            font-weight: 600;
+            color: rgb(77, 72, 182);
+        }
+    }
+}
+
+.buttons {
+    width: 100%;
+    display: block;
+    button {
+        width: 45%;
+    }
+    .done {
+        color: white;
+        border: solid 0;
+        margin-right: 20px;
+        background: #43425D;
+    }
+}
+
+.tu {
+    left: 50%;
+    bottom: 20px;
+    position: absolute;
+    transform: translateX(-50%);
+    font-size: 16px;
+    color: #43425D;
+}
