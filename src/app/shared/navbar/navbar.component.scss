@@ -12,6 +12,9 @@ nav {
         height: 34px;
         display: table;
     }
+    #oMenu {
+        display: none;
+    }
     #menu {
         float: right;
         a, button {
@@ -31,6 +34,62 @@ nav {
         }
         button {
             margin-left: 10px;
+        }
+    }
+}
+
+@media screen and (max-width: 570px) {
+    nav {
+        #menu {
+            display: none;
+        }
+        #oMenu {
+            width: 34px;
+            height: 34px;
+            float: right;
+            padding: 0 0;
+            display: block;
+            color: white;
+            position: relative;
+            &::before {
+                left: 50%;
+                right: 50%;
+                width: 70%;
+                content: "";
+                height: 18px;
+                display: block;
+                position: absolute;
+                box-sizing: border-box;
+                border-top: solid 1.5px;
+                border-bottom: solid 1.5px;
+                transition: linear all .2s;
+                transform: translate(-50%, -50%);
+            }
+            &::after {
+                left: 50%;
+                right: 50%;
+                width: 70%;
+                content: "";
+                height: 0px;
+                display: block;
+                position: absolute;
+                box-sizing: border-box;
+                border-top: solid .75px;
+                transition: linear all .2s;
+                border-bottom: solid .75px;
+                transform: translate(-50%, -50%);
+            }
+            &:hover {
+                &::before {
+                    height: 0px;
+                    border-top: solid .75px;
+                    border-bottom: solid .75px;
+                    transform: translate(-50%, -50%) rotate(45deg);
+                }
+                &::after {
+                    transform: translate(-50%, -50%) rotate(-45deg);
+                }
+            }
         }
     }
 }
