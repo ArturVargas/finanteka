@@ -1,0 +1,154 @@
+header {
+    width: 100%;
+    min-height: 800px;
+    position: relative;
+    background-color: rgb(210, 67, 84); 
+    background-color: rgb(77, 72, 182); 
+    background-image: url("../../../assets/img/backs/bg-girl-02.jpg"); 
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    .ola {
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        position: absolute;
+    }
+    .ola2 {
+        left: 0px;
+        bottom: 0px;
+        width: 100%;
+        position: absolute;
+    }
+    #principal {
+        color: white;
+        min-height: 500px;
+        position: relative;
+        padding-top: 100px;
+        .left {
+            left: 0;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+        }
+        .right {
+            right: 0;
+            width: 50%;
+            height: 100%;
+            position: absolute;
+        }
+        .left, .right {
+            display:flex;
+            .cnt {
+                width: 100%;
+                margin:auto;
+                img {
+                    border-radius: 4px 4px;
+                    box-shadow:  -8px 8px 16px rgba(24, 26, 56, 0.8);
+                }
+            }
+            span {
+                font-size: 28px;
+            }
+            h1 {
+                margin: 0 0;
+                font-size: 38px;
+                font-weight: 600;
+            }
+        }
+    }
+}
+
+.contenedor {
+    width: 100%;
+    padding-top: 30px;
+    position: relative;
+    padding-bottom: 30px;
+    h1 {
+        text-align: center;
+        color: rgb(77, 72, 182);
+    }
+}
+
+.contenedor.gray {
+    background: #F0F0F7;
+}
+
+.contenedor.back {
+    color: white;
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background-color: rgb(210, 67, 84); 
+    background-color: rgb(77, 72, 182); 
+    background-image: url("../../../assets/img/backs/bg-girl-02.jpg"); 
+    background-blend-mode: multiply;
+    background-attachment: fixed;
+    background-position: top;
+    background-size: cover;
+    h1 {
+        color: white;
+    }
+    .targets {
+        padding-top: 20px;
+        .target {
+            width: 33%;
+            height: 220px;
+            padding-left: 20px;
+            padding-right: 20px;
+            vertical-align: top;
+            display: inline-block;
+            box-sizing: border-box;
+            .item {
+                width: 100%;
+                height: 220px;
+                border-radius: 4px 4px;
+                background: rgba( 11, 11, 11, 0.4);
+                .head {
+                    width: 100%;
+                    height: 40px;
+                    line-height: 39px;
+                    text-align: center;
+                    vertical-align: top;
+                    text-transform: uppercase;
+                    background: rgba( 1, 1, 1, 0.2);
+                }
+                .text {
+                    width: 100%;
+                    height: 165px;
+                    display: flex;
+                    padding: 15px 15px;
+                    text-align: center;
+                    box-sizing: border-box;
+                    span {
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.contenedor.back::before {
+    background-image: url(../../shared/../../assets/img/backs/olaLight.png);
+    background-blend-mode: multiply;
+    background-size: cover;
+    bottom: -0.0625rem;
+    content: "";
+    left: 0;
+    height: 3.75rem;
+    position: absolute;
+    width: 100%;
+}
+
+.contenedor.back::after {
+    transform: rotate(180deg);
+    background-image: url(../../shared/../../assets/img/backs/olaLightGrey.png);
+    background-size: cover;
+    top: -0.0625rem;
+    content: "";
+    left: 0;
+    height: 3.75rem;
+    position: absolute;
+    width: 100%;
+}

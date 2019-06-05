@@ -1,0 +1,36 @@
+nav {
+    width: 100%;
+    z-index: 600;
+    height: 100px;
+    position: absolute;
+    .cnt {
+        height: 35px;
+        margin-top: calc(50px - 17.5px);
+    }
+    #title {
+        float: left;
+        height: 34px;
+        display: table;
+    }
+    #menu {
+        float: right;
+        a, button {
+            transition: color linear 0.2s;
+            color: rgba( 255, 255, 255, 0.5);
+        }
+        a:hover, button:hover {
+            color: rgba( 255, 255, 255, 0.8);
+        }
+        a {
+            padding-left: 10px;
+            padding-right: 10px;
+            text-decoration: none !important;
+        }
+        a.active {
+            color: white;
+        }
+        button {
+            margin-left: 10px;
+        }
+    }
+}
