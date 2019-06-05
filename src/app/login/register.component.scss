@@ -31,7 +31,6 @@ p {
 
 .g {
     input[type="text"],
-    input[type="email"],
     input[type="password"] {
         width: 100%;
         outline: none;
@@ -52,7 +51,7 @@ p {
     height: 42px;
     .rem {
         float: left;
-        color: #43425D;
+        color: rgb(77, 72, 182);
         input {
             width: 30px;
         }
@@ -68,7 +67,7 @@ p {
         a {
             font-size: 16px;
             font-weight: 600;
-            color: #43425D;
+            color: rgb(77, 72, 182);
         }
     }
 }
