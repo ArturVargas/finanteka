@@ -6,6 +6,8 @@
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Source Sans Pro', "Helvetica Neue", sans-serif; }
 
+* { outline: none; }
+
 .cnt {
     margin: auto auto;
     max-width: 1100px;
@@ -23,6 +25,20 @@ button {
     background: transparent;
     padding-right: 9px;
     padding-left: 9px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="number"],
+input[type="password"] {
+    outline: none;
+    border: solid 0;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 6px;
+    box-sizing: border-box;
+    transition: color 0.2s;
+    border-bottom: solid 2px rgb(213, 214, 219);
 }
 
 h1 {

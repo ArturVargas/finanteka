@@ -13,6 +13,7 @@ export class YieldsCalculatorComponent implements OnInit {
 
   public ChartOptions: ChartOptions = {
     responsive: true,
+    maintainAspectRatio: false,
     // We use these empty structures as placeholders for dynamic theming.
     scales: { xAxes: [{}], yAxes: [{}] },
     plugins: {
@@ -23,12 +24,14 @@ export class YieldsCalculatorComponent implements OnInit {
     }
   };
   public ChartLabels: Label[] = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
-  public ChartType: ChartType = 'bar';
+  public ChartType: ChartType = 'line';
   public ChartLegend = true;
+  public GradientFill;
   public ChartColor: Color[] = [
     {
-      backgroundColor: 'rgba(0, 255, 0, 0.3)',
-      borderColor: 'green'
+      borderWidth: 2,
+      backgroundColor: 'rgba(165, 162, 251, 0.3)',
+      borderColor: 'rgba(165, 162, 251, 1)'
     }
   ] 
   public ChartData: ChartDataSets[] = [
@@ -38,21 +41,27 @@ export class YieldsCalculatorComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    var ctx = document.getElementsByTagName('canvas')[0].getContext("2d");
+    this.GradientFill = ctx.createLinearGradient(0, 0, 0, 300);
+    this.GradientFill.addColorStop(0, "rgba( 165, 162, 251, 0.6)");
+    this.GradientFill.addColorStop(1, "rgba( 255, 255, 255, 0)");
+    this.ChartColor[0].backgroundColor = this.GradientFill;
+    this.calcular([0,0,0,0,0,0]);
   }
 
   chartHovered({event, active }: {event: MouseEvent, active:{}[]}) {
     console.log(event, active);
   }
 
-  calcular() {
+  calcular(m) {
     const data = [
-      Math.round(Math.random() * 100),
-      Math.round(Math.random() * 100),
-      80,
-      Math.round(Math.random() * 100),
-      57,
-      55,
-      40
+      Math.round(Math.random() * m[0]),
+      Math.round(Math.random() * m[1]),
+      m[2],
+      Math.round(Math.random() * m[3]),
+      m[4],
+      m[5],
+      m[6]
     ];
     this.ChartData[0].data = data;
   }

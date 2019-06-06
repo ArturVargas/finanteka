@@ -1,50 +1,27 @@
-
-
-<div class="container my-5">
-  <div class="row">
-    <div class="col">
-      <div>
-        <mat-card>
-          <mat-card-header>
-            <mat-card-title>
-              Rendimientos
-            </mat-card-title>
-          </mat-card-header>
-          <mat-card-content>
-            <mat-form-field appearance="outline">
-              <mat-label>Ingresa una Cantidad</mat-label>
-              <input matInput placeholder="MXN">
-              <mat-icon matSuffix>attach_money</mat-icon>
-              <mat-hint>Sólo números</mat-hint>
-            </mat-form-field>
-            <div class="my-3">
-              <button mat-raised-button class="btn-block" color="primary"
-                  (click)="calcular()">
-                Calcular
-                <mat-icon>timeline</mat-icon>
-              </button>
-            </div>
-          </mat-card-content>
-        </mat-card>
+<div class="chartCont">
+  <div id="chartInfo">
+    <div class="cnt">
+      <h2>Rendimiento</h2>
+      <div class="calc">
+        <input type="text" placeholder="$ Ingresa una Cantidad MXN"> <br>
+        <button (click)="calcular([100,100,80,100,57,55,40])">
+          Calcular
+        </button>
       </div>
     </div>
-    <div class="col">
-      <div class="flex">
-        <div class="flex-item">
-          <div>
-            <canvas baseChart
-               [datasets]="ChartData"
-               [labels]="ChartLabels"
-               [options]="ChartOptions" 
-               [plugins]="ChartPlugins"
-               [legend]="ChartLegend"
-               [chartType]="ChartType"
-               [colors]="ChartColor"
-               (chartHover)="chartHovered($event)"
-            ></canvas>
-          </div>
-        </div>
-      </div>
+  </div>
+  <div id="chart">
+    <div class="cnt">
+      <canvas height="300" id="myChart" baseChart
+          [datasets]="ChartData"
+          [labels]="ChartLabels"
+          [options]="ChartOptions" 
+          [plugins]="ChartPlugins"
+          [legend]="ChartLegend"
+          [chartType]="ChartType"
+          [colors]="ChartColor"
+          (chartHover)="chartHovered($event)"
+      ></canvas>
     </div>
   </div>
 </div>
