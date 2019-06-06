@@ -1,0 +1,22 @@
+
+* {
+    overflow-x: hidden !important;
+}
+
+#sidebar-wrapper {
+    min-height: 100vh;
+    //margin-left: -15rem;
+}
+
+#sidebar-wrapper .sidebar-heading {
+    padding: 1rem 1.25rem;
+    font-size: 1.5rem;
+}
+
+#sidebar-wrapper .list-group {
+    width: 240px;
+}
+
+.actv {
+    background: rgb( 218, 224, 229) !important;
+}

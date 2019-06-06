@@ -16,6 +16,8 @@ import { FaqsComponent } from './faqs/faqs.component';
 import { InvestDashboardComponent } from './invest-dashboard/invest-dashboard.component';
 import { InvestFormComponent } from './invest-form/invest-form.component';
 import { YieldsCalculatorComponent } from './yields-calculator/yields-calculator.component';
+import { ProyectsComponent } from './proyects/proyects.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,9 @@ import { YieldsCalculatorComponent } from './yields-calculator/yields-calculator
     FaqsComponent,
     InvestDashboardComponent,
     InvestFormComponent,
-    YieldsCalculatorComponent
+    YieldsCalculatorComponent,
+    ProyectsComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +39,8 @@ import { YieldsCalculatorComponent } from './yields-calculator/yields-calculator
   ],
   exports: [
     PagesComponent,
-    HomeComponent
+    HomeComponent,
+    YieldsCalculatorComponent
   ]
 })
 export class PagesModule { }

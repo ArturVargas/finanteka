@@ -1,3 +1,90 @@
-<p>
-  invest-dashboard works!
-</p>
+
+
+<div class="example-container">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Responsive App</h1>
+    </mat-toolbar>
+  
+    <mat-drawer-container>
+      <mat-drawer #snav mode="side">
+        <mat-nav-list>
+          <a mat-list-item routerLink="/dashboard">Mis inversiones</a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/proyects">Proyectos</a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/founds">Agregar Fondos</a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/profile">Perfil</a>
+          <mat-divider></mat-divider>
+          <a mat-list-item routerLink="/login">Salir</a>
+
+        </mat-nav-list>
+      </mat-drawer>
+  
+      <mat-drawer-content>
+        <!-- Esto se puede hacer en otro componente -->
+       <div class="container my-5">
+        <h3 class="text-center">Resumen de tu Cuenta</h3>
+        <div class="row my-4">
+          <div class="col">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>
+                  Rendimientos
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <h3>19.7%</h3>
+                <p>
+                  $4,500
+                  <span>Intereses Recibidos</span>
+                </p>
+                <mat-list>
+                  <h3 mat-subheader>Comisiones</h3>
+                  <mat-list-item>
+                    <h4>$200</h4>
+                  </mat-list-item>
+                </mat-list>
+              </mat-card-content>
+            </mat-card>
+          </div>
+          <div class="col">
+            <mat-card>
+              <mat-card-header>
+                <mat-card-title>
+                  Valor de la Cuenta.
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+                <h3>$3,000</h3>
+                <mat-list>
+                  <h3 mat-subheader>Dinero Disponible</h3>
+                  <mat-list-item>
+                    <h4>$1,300</h4>
+                  </mat-list-item>
+                  <h3 mat-subheader>En Fondeo</h3>
+                  <mat-list-item>
+                    <h4>$750</h4>
+                  </mat-list-item>
+                  <h3 mat-subheader>Pendiente de Pago</h3>
+                  <mat-list-item>
+                    <h4>$850</h4>
+                  </mat-list-item>
+                </mat-list>
+              </mat-card-content>
+            </mat-card>
+          </div>
+        </div>
+       </div>
+       <div class="container mb-4">
+         <!-- Aqui va otra grafica no la calculadora -->
+         <app-yields-calculator></app-yields-calculator>
+       </div>
+
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div> 
+  <app-footer></app-footer>

@@ -1,3 +1,29 @@
-<p>
-  sidebar works!
-</p>
+
+<div class="example-container">
+    <mat-toolbar color="primary">
+      <button mat-icon-button (click)="snav.toggle()">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <h1>Finanteka</h1>
+    </mat-toolbar>
+  
+    <mat-drawer-container>
+      <mat-drawer #snav mode="side">
+        <!-- <mat-nav-list> -->
+          <a mat-list-item routerLink="/formulario">Mis inversiones</a>
+          <a mat-list-item routerLink=".">Proyectos</a>
+          <a mat-list-item routerLink=".">Perfil</a>
+          <a mat-list-item routerLink=".">Salir</a>
+        <!-- </mat-nav-list> -->
+      </mat-drawer>
+  
+      <mat-drawer-content>
+
+        <div class="container">
+          <!-- <app-yields-calculator></app-yields-calculator> -->
+          <router-outlet></router-outlet>
+        </div>
+      
+      </mat-drawer-content>
+    </mat-drawer-container>
+  </div>
