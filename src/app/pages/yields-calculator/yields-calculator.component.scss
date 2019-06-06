@@ -21,6 +21,8 @@
     }
     .calc {
         input {
+            width: 220px;
+            text-align: center;
             padding-bottom: 3px;
             animation: btn infinite 1.4s;
             border-bottom: solid 2px rgb(213, 214, 219);
