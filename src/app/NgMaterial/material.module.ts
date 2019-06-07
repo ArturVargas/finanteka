@@ -13,7 +13,7 @@ import {
     MatCardModule,
     MatListModule,
     MatDividerModule,
-    MatBottomSheetModule
+    MatBottomSheetModule,
 
  } from '@angular/material';
 

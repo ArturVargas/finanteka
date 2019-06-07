@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatBottomSheet } from '@angular/material';
+import { AddFundsComponent } from '../add-funds/add-funds.component';
+
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +10,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private _bottomSheet: MatBottomSheet) { }
 
+  addMoney(){
+    this._bottomSheet.open(AddFundsComponent);
+  }
   ngOnInit() {
   }
 
 }
+
