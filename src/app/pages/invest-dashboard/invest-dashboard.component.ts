@@ -12,4 +12,8 @@ export class InvestDashboardComponent implements OnInit {
   ngOnInit() {
   }
 
+  addMoney(){
+    console.log('manda a traer un archivo de html')
+  }
+
 }
