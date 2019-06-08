@@ -4,21 +4,25 @@
   <div class="cnt">
       <img routerLink='/' src="../../assets/img/finantekaPurple.svg" height="40" alt="" srcset="">
       <p>Por favor, completa los campos para crear tú cuenta</p>
-      <form action="">
+      <form (ngSubmit)="sendForm()" [formGroup]="registerForm">
         <div class="g">
-          <input required type="text" name="Name" placeholder="Nombre" id="">
-          <input required type="email" name="email" placeholder="Correo Electrónico" id="">
-          <input required type="password" name="password" placeholder="Contraseña" id="">
-          <input required type="password" name="repassword" placeholder="Repite la Contraseña" id="">
+          <span *ngIf="registerForm.controls['nombre'].errors" >El Nombre es obligatorio</span>
+          <input required type="text" placeholder="Nombre" formControlName="nombre">
+          <span *ngIf="registerForm.controls['email'].errors" >El Correo no es valido</span>
+          <input required type="email" placeholder="Correo Electrónico" formControlName="email">
+          <span *ngIf="registerForm.controls['password'].value !== registerForm.controls['repassword'].value" >Las Contraseñas no coinciden</span>
+          <span *ngIf="registerForm.controls['password'].errors" >La contraseña es obligatoria</span>
+          <input required type="password" placeholder="Contraseña" formControlName="password">
+          <input required type="password" placeholder="Repite la Contraseña" formControlName="repassword">
         </div>
         <div class="options">
           <div class="rem">
-            <input type="checkbox" name="rememberme" id=""> 
+            <input type="checkbox" formControlName="terms"> 
             <span>Acepto los Términos y Condiciones</span>
           </div>
         </div>
         <div class="buttons">
-          <button class="done">Regístrame</button>
+          <button type="submit" class="done">Regístrame</button>
           <button style="color: #43425D;" routerLink='/login'>Ya tengo cuenta</button>
         </div>
       </form>
@@ -29,53 +33,3 @@
   </div>
   <a class="tu" href="#">Términos de uso y política de privacidad</a>
 </div>
-
-<!--
-<div class="container">
-  <div class="my-5 ml-auto">
-    <form action="">
-      <div class="form-group">
-        <mat-form-field appearance="outline">
-          <mat-label>Nombre</mat-label>
-          <input matInput placeholder="Nombre">
-          <mat-icon matSuffix>sentiment_very_satisfied</mat-icon>
-          <mat-hint>Tú nombre</mat-hint>
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field appearance="outline">
-          <mat-label>Correo Electronico</mat-label>
-          <input matInput placeholder="Correo" required> 
-          <mat-icon matSuffix>email</mat-icon>
-          <mat-hint>Tú correo</mat-hint>
-          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-          <!--
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field appearance="outline">
-          <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>  
-      </div>
-      <div class="form-group">
-        <mat-checkbox>Acepto los Términos y Condiciones</mat-checkbox>
-      </div>
-      <div class="d-flex justify-content-start mb-3">
-        <button mat-raised-button color="primary">
-          Crear Cuenta
-        </button>
-      </div>
-      <div class="d-flex justify-content-start">
-        <button mat-raised-button color="accent" routerLink='/login'>
-          Ya tengo una cuenta
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
--->

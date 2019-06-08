@@ -6,14 +6,15 @@
   <div class="cnt">
       <img routerLink='/' src="../../assets/img/finantekaPurple.svg" height="40" alt="" srcset="">
       <p>Bienvenido de nuevo, por favor ingresa con tu cuenta</p>
-      <form action="">
+      <form (ngSubmit)="sendForm()" [formGroup]="loginForm">
         <div class="g">
-          <input required type="email" name="email" placeholder="Correo Electrónico" id="">
-          <input required type="password" name="password" placeholder="Contraseña" id="">
+            <span *ngIf="loginForm.controls['email'].errors" >El correo no es valido</span>
+          <input required type="email" placeholder="Correo Electrónico" formControlName="email">
+          <input required type="password" placeholder="Contraseña" formControlName="password">
         </div>
         <div class="options">
           <div class="rem">
-            <input type="checkbox" name="rememberme" id=""> 
+            <input type="checkbox" name="rememberme"> 
             <span>Recuérdame</span>
           </div>
           <div class="for">
@@ -21,7 +22,7 @@
           </div>
         </div>
         <div class="buttons">
-          <button class="done" routerLink="/dashboard">Ingresar</button>
+          <button class="done" type="submit">Ingresar</button>
           <button style="color: #43425D;" routerLink='/register'>Regístrame</button>
         </div>
       </form>
@@ -32,43 +33,3 @@
   </div>
   <a class="tu" href="#">Términos de uso y política de privacidad</a>
 </div>
-
-<!--
-<div class="container">
-  <div class="my-5 ml-auto">
-    <form action="">
-      <div class="form-group">
-        <mat-form-field appearance="outline">
-          <mat-label>Correo Electronico</mat-label>
-          <input matInput placeholder="Correo" required>
-          <mat-icon matSuffix>email</mat-icon>
-          <mat-hint>Tú correo</mat-hint>
-          <!-- <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error> -->
-          <!--
-        </mat-form-field>
-      </div>
-      <div class="form-group">
-        <mat-form-field appearance="outline">
-          <mat-label>Contraseña</mat-label>
-          <input matInput placeholder="Contraseña" [type]="hide ? 'password' : 'text'">
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
-              <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>  
-      </div>
-
-      <div class="d-flex justify-content-start mb-3">
-        <button mat-raised-button color="primary">
-          Ingresar
-        </button>
-      </div>
-      <div class="d-flex justify-content-start">
-        <button mat-raised-button color="accent" routerLink='/register'>
-          Aún no tengo una cuenta.
-        </button>
-      </div>
-    </form>
-  </div>
-</div>
-
--->
