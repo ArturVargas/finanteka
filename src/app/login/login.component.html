@@ -8,9 +8,14 @@
       <p>Bienvenido de nuevo, por favor ingresa con tu cuenta</p>
       <form (ngSubmit)="sendForm()" [formGroup]="loginForm">
         <div class="g">
-            <span *ngIf="loginForm.controls['email'].errors" >El correo no es valido</span>
-          <input required type="email" placeholder="Correo Electrónico" formControlName="email">
-          <input required type="password" placeholder="Contraseña" formControlName="password">
+          <div>
+            <span *ngIf="loginForm.controls['email'].errors" >Debe de ser válido</span>
+            <input required type="email" placeholder="Correo Electrónico" formControlName="email">
+          </div>
+          <div>
+            <span *ngIf="loginForm.controls['password'].errors" >Requerido</span>
+            <input required type="password" placeholder="Contraseña" formControlName="password">
+          </div>
         </div>
         <div class="options">
           <div class="rem">

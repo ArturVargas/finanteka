@@ -1,0 +1,172 @@
+h1 {
+    font-size: 28px;
+    color: #43425D;
+    font-weight: 200;
+    padding-top: 28px;
+    padding-left: 12px;
+    padding-bottom: 28px;
+    padding-right: 12px;
+}
+
+
+.item {
+    height: auto;
+    vertical-align: top;
+    padding-left: 12px;
+    padding-right: 12px;
+    padding-bottom: 24px;
+    display: inline-block;
+    box-sizing: border-box;
+    .target {
+        width: 100%;
+        background: white;
+        box-shadow: 0px 2px 6px rgba( 1, 1, 1, 0.04);
+        .title {
+            display: block;
+            font-size: 18px;
+            padding-top: 10px;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-bottom: 10px;
+            color: rgba(67, 66, 93, 1);
+        }
+        form {
+            width: 100%;
+            text-align: center;
+            padding-left: 14px;
+            padding-right: 14px;
+            input,
+            select {
+                width: 70%;
+                margin: auto auto;
+                margin-bottom: 5px;
+                text-align: center;
+            }
+        }
+        span {
+            width: 100%;
+            display: block;
+            text-align: center;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-bottom: 10px;
+            color: rgba(67, 66, 93, 0.5);
+        }
+        button {
+            width: 70%;
+            color: white;
+            border: solid 0;
+            max-width: 400px;
+            margin-top: 20px;
+            background: #43425D;
+            transition: all linear 0.2s;
+            box-shadow: 0px 10px 20px 0px rgba(67, 66, 93, 0.2);
+            &:hover {
+                transform: scale(1.05);
+                background: rgb(81, 80, 117);
+                box-shadow: 0px 12px 22px 0px rgba(67, 66, 93, 0.4);
+            }
+        }
+        .dbl {
+            width: 50%;
+            display: inline-block;
+            .val {
+                display: block;
+                font-size: 20px;
+                color: #4D4F5C;
+                font-weight: 600;
+                text-align: center;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+.cnt1 {
+    width: 100%;
+    .item {
+        width: 100%;
+        .target {
+            canvas {
+                padding-left: 10px;
+                padding-bottom: 10px;
+            }
+        }
+    }
+}
+
+.cnt2 {
+    width: 100%;
+    .item {
+        width: 50%;
+    }
+}
+
+.cnt4 {
+    width: 100%;
+    .item {
+        width: 25%;
+        .target {
+            .title {
+                display: block;
+                font-size: 14px;
+                padding-top: 10px;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-bottom: 10px;
+                color: rgba(67, 66, 93, 0.5);
+            }
+            .val {
+                display: block;
+                font-size: 20px;
+                color: #4D4F5C;
+                font-weight: 600;
+                padding-left: 14px;
+                padding-right: 14px;
+                padding-bottom: 10px;
+                svg {
+                    float: right;
+                    height: 25px;
+                }
+            }
+        }
+    }
+}
+
+.circle {
+    width: 120px;
+    height: 120px;
+    overflow: hidden;
+    margin: auto auto;
+    border-radius: 50%;
+    position: relative;
+    background: aliceblue;
+    .txt {
+        top: 10%;
+        left: 10%;
+        width: 80%;
+        height: 80%;
+        display: flex;
+        color: #4D4F5C;
+        text-align: center;
+        border-radius: 50%;
+        position: absolute;
+        align-items: center;
+        background: white;
+        vertical-align: center;
+        div {
+            width: 100%;
+            text-align: center;
+        }
+    }
+    .percent {
+        left: 0;
+        bottom: 0;
+        height: 0;
+        width: 100%;
+        position: absolute;
+        background: rgb(165, 162, 251);
+    }
+}

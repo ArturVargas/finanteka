@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material';
 import { AddFundsComponent } from '../add-funds/add-funds.component';
-
+const eva = require('eva-icons');
 
 @Component({
   selector: 'app-sidebar',
@@ -16,6 +16,7 @@ export class SidebarComponent implements OnInit {
     this._bottomSheet.open(AddFundsComponent);
   }
   ngOnInit() {
+    eva.replace();
   }
 
 }
