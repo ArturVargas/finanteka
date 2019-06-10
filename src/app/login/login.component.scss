@@ -46,6 +46,22 @@ p {
         box-sizing: border-box;
         border-bottom: solid 2px rgb(213, 214, 219);
     }
+    & > div {
+        position: relative;
+    }
+    span {
+        top: 0px;
+        right: 0px;
+        color: white;
+        font-size: 10px;
+        font-weight: bold;
+        padding-left: 5px;
+        position: absolute;
+        padding-right: 5px;
+        border-radius: 2px 2px;
+        text-transform: uppercase;
+        background: rgb(245, 188, 196);
+    }
 }
 
 .options {

@@ -1,4 +1,66 @@
+<div id="dashpace">
+    <nav>
+      <div id="finder">
+        <i data-eva="search-outline" data-eva-width="22" data-eva-height="22"  data-eva-fill="#BCBCCB"></i>
+        <input type="text" placeholder="Buscar emprendedores, negocios o ayuda">
+      </div>
+      <div id="items">
+        <button id="user">
+          <label>Arturo Figueroa</label>
+          <img src="https://scontent.fmex1-1.fna.fbcdn.net/v/t1.0-9/23843345_10204282949109859_332682262452023732_n.jpg?_nc_cat=108&_nc_ht=scontent.fmex1-1.fna&oh=8f727b4c56ef647786b02ea1afd1a349&oe=5D93E8B9" alt="">
+        </button>
+        <button style="padding-right: 15px;">
+          <i data-eva="bell" data-eva-width="18" data-eva-height="18"  data-eva-fill="#BCBCCB"></i>
+        </button>
+        <button>
+          <i data-eva="message-circle" data-eva-width="18" data-eva-height="18"  data-eva-fill="#BCBCCB"></i>
+        </button>
+      </div>
+    </nav>
 
+    <div id="PI">
+      <div id="title">
+        <img src="../../../assets/img/finanteka.svg" alt="" srcset="">
+      </div>
+      <div id="menu">
+        <a routerLink="/dashboard" routerLinkActive="active">
+          <i data-eva="activity-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+          <span>
+            Mis inversiones
+          </span>
+        </a>
+        <a routerLink="proyects" routerLinkActive="active">
+          <i data-eva="archive-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+          <span>
+            Proyectos
+          </span>
+        </a>
+        <a (click)="addMoney()" routerLinkActive="active">
+          <i data-eva="credit-card-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+          <span>
+            Agregar Fondos
+          </span>
+        </a>
+        <a routerLink="profile" routerLinkActive="active">
+          <i data-eva="person-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+          <span>
+            Perfil
+          </span>
+        </a>
+        <a routerLink="/login" routerLinkActive="active">
+          <i data-eva="power-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+          <span>
+            Salir
+          </span>
+        </a>
+      </div>
+    </div>
+
+    <div id="container">
+      <router-outlet></router-outlet>
+    </div>
+</div>
+<!--
 <div class="example-container">
     <mat-toolbar color="primary">
       <button mat-icon-button (click)="snav.toggle()">
@@ -32,3 +94,4 @@
       </mat-drawer-content>
     </mat-drawer-container>
   </div>
+-->

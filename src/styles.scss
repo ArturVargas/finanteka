@@ -30,7 +30,8 @@ button {
 input[type="text"],
 input[type="email"],
 input[type="number"],
-input[type="password"] {
+input[type="password"],
+select {
     outline: none;
     border: solid 0;
     padding-left: 5px;

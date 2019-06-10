@@ -6,14 +6,22 @@
       <p>Por favor, completa los campos para crear tú cuenta</p>
       <form (ngSubmit)="sendForm()" [formGroup]="registerForm">
         <div class="g">
-          <span *ngIf="registerForm.controls['nombre'].errors" >El Nombre es obligatorio</span>
-          <input required type="text" placeholder="Nombre" formControlName="nombre">
-          <span *ngIf="registerForm.controls['email'].errors" >El Correo no es valido</span>
-          <input required type="email" placeholder="Correo Electrónico" formControlName="email">
-          <span *ngIf="registerForm.controls['password'].value !== registerForm.controls['repassword'].value" >Las Contraseñas no coinciden</span>
-          <span *ngIf="registerForm.controls['password'].errors" >La contraseña es obligatoria</span>
-          <input required type="password" placeholder="Contraseña" formControlName="password">
-          <input required type="password" placeholder="Repite la Contraseña" formControlName="repassword">
+          <div>
+            <span *ngIf="registerForm.controls['nombre'].errors" >El Nombre es obligatorio</span>
+            <input required type="text" placeholder="Nombre" formControlName="nombre">
+          </div>
+          <div>
+            <span *ngIf="registerForm.controls['email'].errors" >El Correo no es valido</span>
+            <input required type="email" placeholder="Correo Electrónico" formControlName="email">
+          </div>
+          <div>
+            <span *ngIf="registerForm.controls['password'].errors" >La contraseña es obligatoria</span>
+            <input required type="password" placeholder="Contraseña" formControlName="password">
+          </div>
+          <div>
+            <span *ngIf="registerForm.controls['password'].value !== registerForm.controls['repassword'].value" >No Coinciden</span>
+            <input required type="password" placeholder="Repite la Contraseña" formControlName="repassword">
+          </div>
         </div>
         <div class="options">
           <div class="rem">

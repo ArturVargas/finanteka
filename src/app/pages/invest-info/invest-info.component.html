@@ -1,4 +1,160 @@
+<div class="cont">
+  <h1>Vista General</h1>
+  <div class="cnt4">
+    <div class="item">
+      <div class="target">
+        <span class="title">
+          Valor de Cuenta
+        </span>
+        <div class="val">
+          $ 3,000 MXN
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            height="30" 
+            viewBox="0 0 112 40"><defs>
+              <linearGradient id="a" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#55d8fe"/>
+                <stop offset="1" stop-color="#54d8ff" stop-opacity="0.502"/>
+              </linearGradient></defs>
+              <path d="M98,119V101h6v18Zm-9,0V89h8v30Zm-9,0V99h8v20Zm-9,0V106h8v13Zm-9,0V94h8v25Zm-9,0V84h8v35Zm-9,0V94h8v25Zm-9,0V99h8v20Zm-9,0V79h8v40Zm-9,0V89h8v30Zm-7,0V101h6v18Zm-9,0V89H9v30Zm-9,0V99H0v20Z" 
+              transform="translate(8 -79)" fill="url(#a)"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="target">
+        <span class="title">
+          Dinero Disponible
+        </span>
+        <div class="val">
+          $ 1,300 MXN
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            height="30" 
+            viewBox="0 0 112 40"><defs>
+              <linearGradient id="b" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#A3A0FB"/>
+                <stop offset="1" stop-color="#A3A0FB" stop-opacity="0.502"/>
+              </linearGradient></defs>
+              <path d="M98,119V101h6v18Zm-9,0V89h8v30Zm-9,0V99h8v20Zm-9,0V106h8v13Zm-9,0V94h8v25Zm-9,0V84h8v35Zm-9,0V94h8v25Zm-9,0V99h8v20Zm-9,0V79h8v40Zm-9,0V89h8v30Zm-7,0V101h6v18Zm-9,0V89H9v30Zm-9,0V99H0v20Z" 
+              transform="translate(8 -79)" fill="url(#b)"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="target">
+        <span class="title">
+          En Fondeo
+        </span>
+        <div class="val">
+          $ 750 MXN
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            height="30" 
+            viewBox="0 0 112 40"><defs>
+              <linearGradient id="c" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#5EE2A0"/>
+                <stop offset="1" stop-color="#5EE2A0" stop-opacity="0.502"/>
+              </linearGradient></defs>
+              <path d="M98,119V101h6v18Zm-9,0V89h8v30Zm-9,0V99h8v20Zm-9,0V106h8v13Zm-9,0V94h8v25Zm-9,0V84h8v35Zm-9,0V94h8v25Zm-9,0V99h8v20Zm-9,0V79h8v40Zm-9,0V89h8v30Zm-7,0V101h6v18Zm-9,0V89H9v30Zm-9,0V99H0v20Z" 
+              transform="translate(8 -79)" fill="url(#c)"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <div class="target">
+        <span class="title">
+          Pendiente de Pago
+        </span>
+        <div class="val">
+          $ 850 MXN
+          <svg 
+            xmlns="http://www.w3.org/2000/svg" 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            height="30" 
+            viewBox="0 0 112 40"><defs>
+              <linearGradient id="d" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+                <stop offset="0" stop-color="#f0932b"/>
+                <stop offset="1" stop-color="#f0932b" stop-opacity="0.502"/>
+              </linearGradient></defs>
+              <path d="M98,119V101h6v18Zm-9,0V89h8v30Zm-9,0V99h8v20Zm-9,0V106h8v13Zm-9,0V94h8v25Zm-9,0V84h8v35Zm-9,0V94h8v25Zm-9,0V99h8v20Zm-9,0V79h8v40Zm-9,0V89h8v30Zm-7,0V101h6v18Zm-9,0V89H9v30Zm-9,0V99H0v20Z" 
+              transform="translate(8 -79)" fill="url(#d)"/>
+            </svg>
+        </div>
+      </div>
+    </div>
+  </div>
 
+  <div class="cnt1">
+    <div class="item">
+      <div class="target">
+        <div class="title">Estadística</div>
+        <canvas height="300" id="myChart" baseChart
+          [datasets]="ChartData"
+          [labels]="ChartLabels"
+          [options]="ChartOptions" 
+          [plugins]="ChartPlugins"
+          [legend]="ChartLegend"
+          [chartType]="ChartType"
+          [colors]="ChartColor"
+          (chartHover)="chartHovered($event)"
+        ></canvas>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="cnt2">
+    <div class="item">
+      <div class="target">
+        <div class="title">Retirar Fondos</div>
+        <span>
+          Indique el Importe que desea retirar y en que cuanta desea abonarlo. <br>
+          Puede tardar de 2 a 3 días habiles en concluir esta transferencia.
+        </span>
+        <form action="">
+          <input type="text" placeholder="Dinero Disponible ($ 1,300 MXN)">
+          <input type="text" placeholder="Importe">
+          <select style="height: 34px; margin-top: 5px; display: block;" name="" id="">
+            <option value="">Cuenta</option>
+          </select>
+          <button style="margin-bottom: 25px;">Retirar Fondos</button>
+        </form>
+      </div>
+    </div>
+    <div class="item">
+      <div class="target">
+        <div class="title">Rendimientos</div>
+        <div class="circle" style="margin-bottom: 10px;">
+          <div class="percent" style="height: 19.7% !important;"></div>
+          <div class="txt">
+            <div>19.7%</div>
+          </div>
+        </div>
+        <div class="dbl">
+          <span>Intereses Recibidos</span>
+          <div class="val">
+            $ 4,500 MXN
+          </div>
+        </div>
+        <div class="dbl">
+          <span>Comisiones</span>
+          <div class="val">
+            $ 200 MXN
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<!--
 <div class="container my-5">
   <h3 class="text-center">Resumen de tu Cuenta</h3>
   <div class="row my-4">
@@ -79,3 +235,5 @@
       </form>
     </div>
  </div>
+
+-->
