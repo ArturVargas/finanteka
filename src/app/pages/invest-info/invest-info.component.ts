@@ -47,12 +47,12 @@ export class InvestInfoComponent implements OnInit {
   ngOnInit() {
     var ctx = document.getElementsByTagName('canvas')[0].getContext("2d");
     this.GradientFill = ctx.createLinearGradient(0, 0, 0, 300);
-    this.GradientFill.addColorStop(0, "rgba( 165, 162, 251, 0.7)");
+    this.GradientFill.addColorStop(0, "rgba( 165, 162, 251, 0.9)");
     this.GradientFill.addColorStop(1, "rgba( 255, 255, 255, 0)");
     this.ChartColor[0].backgroundColor = this.GradientFill;
     // Color 2
     this.GradientFill = ctx.createLinearGradient(0, 0, 0, 300);
-    this.GradientFill.addColorStop(0, "rgba( 52, 226, 156, 0.7)");
+    this.GradientFill.addColorStop(0, "rgba( 52, 226, 156, 0.9)");
     this.GradientFill.addColorStop(1, "rgba( 52, 226, 156, 0)");
     this.ChartColor[1].backgroundColor = this.GradientFill;
     this.calcular();
