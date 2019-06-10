@@ -14,9 +14,10 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'dashboard', component: InvestDashboardComponent, children: [
-    { path: '', component: InvestInfoComponent },
+    { path: 'invest', component: InvestInfoComponent },
     { path: 'proyects', component: ProyectsComponent },
-    { path: 'profile', component: ProfileComponent }
+    { path: 'profile', component: ProfileComponent },
+    { path: '', pathMatch:'full', redirectTo:'/dashboard/invest'}
   ] },
   
   { path:'', pathMatch:'full', redirectTo:'/home' }
