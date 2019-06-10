@@ -1,3 +1,71 @@
-<p>
-  invest-form works!
-</p>
+
+<mat-horizontal-stepper linear='true' #stepper>
+  <mat-step [stepControl]="datosPersonales">
+    <form [formGroup]="datosPersonales">
+      <ng-template matStepLabel>Datos Personales</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Nombre" formControlName="nombre" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Apellido Paterno" formControlName="apePat" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Dirección" formControlName="dir" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="RFC" formControlName="rfc" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="datosBancarios">
+    <form [formGroup]="datosBancarios">
+      <ng-template matStepLabel>Datos Bancarios</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Beneficiario" formControlName="beneficiario" required>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-select placeholder="Banco" formControlName="banco">
+          <mat-option value="option1">BBVA</mat-option>
+          <mat-option value="option2">Banco Azteca</mat-option>
+          <mat-option value="option3">Banorte</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Cuenta" formControlName="cuenta" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="CLABE" formControlName="clabe" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step [stepControl]="datosContacto">
+    <form [formGroup]="datosContacto">
+      <ng-template matStepLabel>Datos de Contacto</ng-template>
+      <mat-form-field>
+        <input matInput placeholder="Correo" formControlName="email" required>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Telefono" formControlName="telefono" required>
+      </mat-form-field>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button matStepperNext>Next</button>
+      </div>
+    </form>
+  </mat-step>
+  <mat-step>
+    <ng-template matStepLabel>Done</ng-template>
+    You are now done.
+    <div>
+      <button mat-button matStepperPrevious>Back</button>
+      <button mat-button (click)="sendForms(); stepper.reset()">Guardar</button>
+    </div>
+  </mat-step>
+</mat-horizontal-stepper>

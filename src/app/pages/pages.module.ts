@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 //Angular Material
 import { MaterialModule } from '../NgMaterial/material.module';
@@ -37,12 +38,17 @@ import { InvestInfoComponent } from './invest-info/invest-info.component';
     MaterialModule,
     ChartsModule,
     SharedModule,
-    PagesRoutingModule
+    PagesRoutingModule,
+    FormsModule, 
+    ReactiveFormsModule
   ],
   exports: [
     PagesComponent,
     HomeComponent,
     YieldsCalculatorComponent
+  ],
+  entryComponents: [
+    InvestFormComponent
   ]
 })
 export class PagesModule { }

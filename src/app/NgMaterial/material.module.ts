@@ -14,6 +14,9 @@ import {
     MatListModule,
     MatDividerModule,
     MatBottomSheetModule,
+    MatStepperModule,
+    MatDialogModule,
+    MatSelectModule
 
  } from '@angular/material';
 
@@ -31,7 +34,10 @@ import {
         MatCardModule,
         MatListModule,
         MatDividerModule,
-        MatBottomSheetModule
+        MatBottomSheetModule,
+        MatStepperModule,
+        MatDialogModule,
+        MatSelectModule
     ],
     exports: [
         MatButtonModule,
@@ -46,7 +52,10 @@ import {
         MatCardModule,
         MatListModule,
         MatDividerModule,
-        MatBottomSheetModule
+        MatBottomSheetModule,
+        MatStepperModule,
+        MatDialogModule,
+        MatSelectModule
     ]
 })
 

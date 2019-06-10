@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { InvestFormComponent } from '../invest-form/invest-form.component';
 
 @Component({
   selector: 'app-profile',
@@ -7,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(public modal: MatDialog) { }
 
   ngOnInit() {
   }
-
+  openMod() {
+    const modalRef = this.modal.open(InvestFormComponent)
+  }
 }
