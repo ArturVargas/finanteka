@@ -75,17 +75,21 @@ h1 {
         }
         .dbl {
             width: 50%;
+            overflow: hidden;
             vertical-align: top;
+            white-space: nowrap;
             display: inline-block;
             .val {
                 display: block;
                 font-size: 20px;
                 color: #4D4F5C;
                 font-weight: 600;
+                overflow: hidden;
                 text-align: center;
                 padding-left: 14px;
                 padding-right: 14px;
                 padding-bottom: 10px;
+                text-overflow: ellipsis;
             }
         }
     }
