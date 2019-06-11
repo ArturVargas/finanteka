@@ -1,0 +1,23 @@
+.profileHeader {
+    height: 80px;
+    position: relative;
+    background: linear-gradient(45deg, rgb(84, 82, 117) 0%, #43425D 100%);
+    .photo {
+        left: 50%;
+        width: 70px;
+        height: 70px;
+        bottom: -10px;
+        position: absolute;
+        border-radius: 50%;
+        background: #F0F2F8;
+        transform: translateX(-50%);
+        img {
+            top: 50%;
+            left: 50%;
+            width: 60px;
+            position: absolute;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}
