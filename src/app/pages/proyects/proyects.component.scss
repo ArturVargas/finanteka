@@ -65,11 +65,11 @@
     }
     .invertir {
         width: 100%;
-        height: 30px;
-        background: rgb(243, 243, 252);
+        height: auto;
         padding: 0 0;
         form {
-            padding: 0 0 !important;
+            padding-top: 12px;
+            padding-bottom: 12px;
         }
         input,
         button {
@@ -79,14 +79,20 @@
             margin: 0 0 !important;
         }
         input {
-            border: solid 0;
+            padding-bottom: 3px;
             background: transparent;
+            text-align: left !important;
+            border-radius: 2px 0px 0px 2px;
+            border: solid 1px rgb(185, 187, 192);
             width: calc(100% - 120px) !important;
         }
         button {
-            border-radius: 0 0;
             width: 120px !important;
+            border-radius: 0px 2px 2px 0px;
             box-shadow: inherit !important;
+            &:hover {
+                transform: inherit !important;
+            }
         }
     }
 }
