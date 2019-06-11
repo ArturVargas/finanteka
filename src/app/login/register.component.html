@@ -8,26 +8,28 @@
       <form (ngSubmit)="sendForm()" [formGroup]="registerForm">
         <div class="g">
           <div>
-            <span *ngIf="registerForm.controls['nombre'].errors" >El Nombre es obligatorio</span>
-            <input required type="text" placeholder="Nombre" formControlName="nombre">
+            <span *ngIf="registerForm.get('nombre').hasError('required') && !registerForm.get('nombre').pristine">Campo Obligatorio</span>
+            <span *ngIf="registerForm.get('nombre').errors?.minlength && !registerForm.get('nombre').pristine">Mínimo 3 caracteres</span>
+            <input required type="text" placeholder="Nombre *" formControlName="nombre">
           </div>
           <div>
-            <span *ngIf="registerForm.controls['email'].errors" >El Correo no es valido</span>
-            <input required type="email" placeholder="Correo Electrónico" formControlName="email">
+            <span *ngIf="registerForm.get('email').hasError('required') && !registerForm.get('email').pristine">Campo Obligatorio</span>
+            <span *ngIf="registerForm.get('email').hasError('email') && !registerForm.get('email').pristine">Debe de ser válido</span>
+            <input required type="email" placeholder="Correo Electrónico *" formControlName="email">
           </div>
           <div>
-            <span *ngIf="registerForm.controls['password'].errors" >La contraseña es obligatoria</span>
-            <input required type="password" placeholder="Contraseña" formControlName="password">
+            <span *ngIf="registerForm.get('password').hasError('required') && !registerForm.get('password').pristine">Campo Obligatorio</span>
+            <span *ngIf="registerForm.get('password').errors?.minlength && !registerForm.get('password').pristine">Al menos 6 caracteres</span>
+            <input required type="password" placeholder="Contraseña *" formControlName="password">
           </div>
           <div>
-            <span *ngIf="registerForm.controls['password'].value !== registerForm.controls['repassword'].value" >No Coinciden</span>
-            <input required type="password" placeholder="Repite la Contraseña" formControlName="repassword">
+            <span *ngIf="registerForm.controls['password'].value !== !registerForm.controls['repassword'].value" >No Coinciden</span>
+            <input required type="password" placeholder="Repite la Contraseña *" formControlName="repassword">
           </div>
         </div>
         <div class="options">
           <div class="rem">
-            <input type="checkbox" formControlName="terms"> 
-            <span>Acepto los Términos y Condiciones</span>
+            <mat-checkbox formControlName="terms">Acepto los Términos y Condiciones</mat-checkbox>
           </div>
         </div>
         <div class="buttons">

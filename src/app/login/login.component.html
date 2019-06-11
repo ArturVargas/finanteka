@@ -10,18 +10,18 @@
       <form (ngSubmit)="sendForm()" [formGroup]="loginForm">
         <div class="g">
           <div>
-            <span *ngIf="loginForm.controls['email'].errors" >Debe de ser válido</span>
+            <span *ngIf="loginForm.get('email').hasError('required') && !loginForm.get('email').pristine">Requerido</span>
+            <span *ngIf="loginForm.get('email').hasError('email') && !loginForm.get('email').pristine">Debe de ser válido</span>
             <input required type="email" placeholder="Correo Electrónico" formControlName="email">
           </div>
           <div>
-            <span *ngIf="loginForm.controls['password'].errors" >Requerido</span>
+            <span *ngIf="loginForm.get('password').hasError('required') && !loginForm.get('password').pristine">Requerido</span>
             <input required type="password" placeholder="Contraseña" formControlName="password">
           </div>
         </div>
         <div class="options">
           <div class="rem">
-            <input type="checkbox" name="rememberme"> 
-            <span>Recuérdame</span>
+            <mat-checkbox>Recuérdame</mat-checkbox>
           </div>
           <div class="for">
             <a href="#">Olvidé mi contraseña</a>
