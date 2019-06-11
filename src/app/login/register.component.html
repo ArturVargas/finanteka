@@ -23,7 +23,7 @@
             <input required type="password" placeholder="Contraseña *" formControlName="password">
           </div>
           <div>
-            <span *ngIf="registerForm.controls['password'].value !== !registerForm.controls['repassword'].value" >No Coinciden</span>
+            <span *ngIf="registerForm.controls['password'].value !== registerForm.controls['repassword'].value" >No Coinciden</span>
             <input required type="password" placeholder="Repite la Contraseña *" formControlName="repassword">
           </div>
         </div>
