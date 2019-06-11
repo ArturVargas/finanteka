@@ -1,12 +1,76 @@
+.compact {
+    overflow: hidden;
+    border-radius: 4px 4px;
+    transition: all linear 0.5s;
+    will-change: height;
+    background: transparent !important;
+    &.activeE {
+        background: white !important;
+        .editSpace {
+            opacity: 1;
+            height: 270px;
+            transform: scale(1);
+        }
+        .info {
+            opacity: 0;
+            height: 80px;
+        }
+        .edit {
+            svg {
+                &:nth-child(1) {
+                    display: none !important;
+                }
+                &:nth-child(2) {
+                    display: block !important;
+                }
+            }
+        }
+    }
+}
+
+.editSpace {
+    opacity: 0;
+    height: 1px;
+    overflow: hidden;
+    transform: scale(0.7);
+    transition: all linear 0.5s;
+    will-change: height;
+}
+
 .profileHeader {
-    height: 80px;
+    min-height: 80px;
     position: relative;
-    background: #959AAB;
+    //background: #959AAB;
+    background: linear-gradient(45deg, rgb(129, 84, 187) 0%, rgb(95, 125, 189) 100%);
+    .edit {
+        top: 10px;
+        right: 10px;
+        height: 30px;
+        z-index: 100;
+        position: absolute;
+        border-radius: 6px;
+        margin: 0 0 !important;
+        width: 30px !important;
+        padding: 0 0 !important;
+        background: white !important;
+        svg {
+            top: 50%;
+            left: 50%;
+            position: absolute;
+            transform: translate(-50%, -50%);
+            &:nth-child(1) {
+                display: block;
+            }
+            &:nth-child(2) {
+                display: none;
+            }
+        }
+    }
     .photo {
         left: 50%;
+        top: 20px;
         width: 70px;
         height: 70px;
-        bottom: -10px;
         position: absolute;
         border-radius: 50%;
         background: #F0F2F8;
@@ -18,6 +82,26 @@
             position: absolute;
             border-radius: 50%;
             transform: translate(-50%, -50%);
+        }
+    }
+    .info {
+        opacity: 1;
+        width: 100%;
+        height: 158px;
+        padding-top: 80px;
+        text-align: center;
+        transition: all linear 0.5s;
+        will-change: height;
+        label {
+            width: 100%;
+            color: white;
+            &.name {
+                padding-top: 18px;
+                margin-bottom: -18px;
+            }
+            &.rfc {
+                padding-bottom: 6px;
+            }
         }
     }
 }

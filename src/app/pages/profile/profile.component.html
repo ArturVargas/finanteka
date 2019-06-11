@@ -2,25 +2,39 @@
   <h1>Perfil</h1>
   <div class="cntLeft">
     <div class="item">
-      <div class="target">
+      <div id="profile" class="target compact">
         <div class="profileHeader">
+          <button id="edit" class="edit">
+            <i data-eva="edit-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+            <i data-eva="close-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+          </button>
           <div class="photo">
             <img src="https://scontent.fmex1-1.fna.fbcdn.net/v/t1.0-9/23843345_10204282949109859_332682262452023732_n.jpg?_nc_cat=108&_nc_ht=scontent.fmex1-1.fna&oh=8f727b4c56ef647786b02ea1afd1a349&oe=5D93E8B9" alt="">
           </div>
+          <div class="info">
+            <label class="name">
+              Arturo Figueroa Vargas
+            </label>
+            <label class="rfc">
+              FIVA831123
+            </label>
+          </div>
         </div>
-        <span class="ltitle">
-          Nombre
-          <input type="text" value="Arturo Figueroa Vargas">
-        </span>
-        <span class="ltitle">
-          RFC
-          <input type="text" value="FIVA831123">
-        </span>
-        <span class="ltitle">
-          Dirección
-          <textarea name="" id="" value="" cols="30" rows="2">Ramos Millán No. 61 Col Emiliano Zapata</textarea>
-        </span>
-        <button>Actualizar</button>
+        <section class="editSpace">
+          <span class="ltitle">
+            Nombre
+            <input type="text" value="Arturo Figueroa Vargas">
+          </span>
+          <span class="ltitle">
+            RFC
+            <input type="text" value="FIVA831123">
+          </span>
+          <span class="ltitle">
+            Dirección
+            <textarea name="" id="" value="" cols="30" rows="2">Ramos Millán No. 61 Col Emiliano Zapata</textarea>
+          </span>
+          <button>Actualizar</button>
+        </section>
       </div>
     </div>
   </div>
