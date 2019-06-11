@@ -18,7 +18,7 @@
     }
     .projectInfo {
         height: auto;
-        padding-bottom: 4px;
+        padding-bottom: 11px;
         width: calc( 100% - 100px);
         .title,
         span {
@@ -36,11 +36,13 @@
             position: relative;
             padding-right: 20px;
             box-sizing: border-box;
+            padding-left: 0 !important;
+            text-align: left !important;
             .bar {
                 height: 25px;
                 position: absolute;
-                border-radius: 4px 4px;
                 background: #F0F2F8;
+                border-radius: 4px 4px;
                 width: calc(100% - 20px);
                 .percent{
                     width: 6.89%;
@@ -61,7 +63,15 @@
         }
     }
     .dbl {
-        padding-top: 8px !important;
+        padding-top: 0px !important;
+        span {
+            padding: 0 0 !important;
+        }
+        .val {
+            height: 20px;
+            line-height: 19px;
+            padding-bottom: 0 !important;
+        }
     }
     .invertir {
         width: 100%;
