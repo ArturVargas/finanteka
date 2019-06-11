@@ -5,7 +5,7 @@ import { Label, Color } from 'ng2-charts';
 @Component({
   selector: 'app-invest-info',
   templateUrl: './invest-info.component.html',
-  styleUrls: ['./invest-info.component.scss']
+  styleUrls: ['./invest-info.component.scss','../../app.component.scss']
 })
 export class InvestInfoComponent implements OnInit {
 
