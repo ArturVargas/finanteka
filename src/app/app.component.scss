@@ -194,6 +194,7 @@ h1 {
     }
     button {
         width: 100% !important;
+        max-width: inherit !important;
         border-radius: 0px 2px 2px 0px;
         box-shadow: inherit !important;
         &:hover {
@@ -279,6 +280,13 @@ hr {
         .item {
             width: 50%;
         }
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .cntLeft,
+    .cntRight {
+        width: 100%;
     }
 }
 
