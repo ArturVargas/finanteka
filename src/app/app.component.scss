@@ -216,4 +216,16 @@ hr {
             width: 100% !important;
         }
     }
+
+    .cnt1 {
+        .item {
+            .target {
+                canvas {
+                    padding-left: 10px;
+                    padding-bottom: 10px;
+                    height: 150px !important;
+                }
+            }
+        }
+    }
 }
