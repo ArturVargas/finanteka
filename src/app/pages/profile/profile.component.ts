@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InvestFormComponent } from '../invest-form/invest-form.component';
+const eva = require('eva-icons');
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +21,7 @@ export class ProfileComponent implements OnInit {
       profile.setAttribute('class', attr);
       activeEP = activeEP ? false : true;
     });
+    eva.replace();
   }
   openMod() {
     const modalRef = this.modal.open(InvestFormComponent)
