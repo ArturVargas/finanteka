@@ -166,7 +166,9 @@ h1 {
                 padding-bottom: 10px;
                 & > div {
                     z-index: 2;
+                    display: table;
                     position: relative;
+                    background: linear-gradient(90deg, white 20%, rgba( 255, 255, 255, 0) 100%);
                 }
                 svg {
                     top: 0;
