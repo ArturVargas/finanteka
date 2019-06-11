@@ -20,6 +20,9 @@ header {
     position: absolute;
     .cnt > img {
         margin-bottom: 12px;
+        &:nth-child(2) {
+            display: none;
+        }
     }
 }
 
@@ -44,6 +47,7 @@ p {
         margin-bottom: 14px;
         border: solid 0;
         box-sizing: border-box;
+        background: transparent;
         border-bottom: solid 2px rgb(213, 214, 219);
     }
     & > div {
@@ -139,5 +143,37 @@ p {
         position: absolute;
         background: linear-gradient(90deg,rgb(140, 143, 160) 0%, transparent 100%);
         transform: translate( 10px, -50%);
+    }
+}
+
+@media screen and (max-width: 790px) {
+    header,
+    #formSpace {
+        width: 100%;
+    }
+    #formSpace * {
+        color: white;
+    }
+    #formSpace button {
+        color: white !important;
+    }
+    ::placeholder {
+        color: white !important;
+    }
+    .g {
+        span {
+            color: black !important;
+            background: rgb(201, 93, 134);
+        }
+    }
+    #formSpace {
+        .cnt > img {
+            &:nth-child(1) {
+                display: none;
+            }
+            &:nth-child(2) {
+                display: inline;
+            }
+        }
     }
 }
