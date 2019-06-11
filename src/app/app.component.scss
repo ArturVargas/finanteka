@@ -75,6 +75,7 @@ h1 {
         }
         .dbl {
             width: 50%;
+            vertical-align: top;
             display: inline-block;
             .val {
                 display: block;
@@ -130,11 +131,19 @@ h1 {
                 color: #4D4F5C;
                 font-weight: 600;
                 padding-left: 14px;
+                position: relative;
                 padding-right: 14px;
                 padding-bottom: 10px;
+                & > div {
+                    z-index: 2;
+                    position: relative;
+                }
                 svg {
-                    float: right;
+                    top: 0;
+                    z-index: 1;
+                    right: 14px;
                     height: 25px;
+                    position: absolute;
                 }
             }
         }
@@ -179,4 +188,32 @@ h1 {
 
 hr {
     margin: 0 0;
+}
+
+
+
+@media screen and (max-width: 800px) {
+    .cnt2 {
+        .item {
+            width: 100%;
+        }
+    }
+    .cnt4 {
+        .item {
+            width: 50%;
+        }
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .cnt4 {
+        .item {
+            width: 100%;
+        }
+    }
+    .target {
+        .dbl {
+            width: 100% !important;
+        }
+    }
 }
