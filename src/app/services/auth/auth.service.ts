@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { URL_Dev } from 'src/app/config/config';
-import { HttpClient } from '@angular/common/http';
+//import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/models/user.model';
 
 @Injectable({
@@ -8,7 +8,7 @@ import { User } from 'src/app/models/user.model';
 })
 export class AuthService {
 
-  constructor(public http: HttpClient) { 
+  constructor() { 
     console.log('Servicio Auth listo')
   }
 
@@ -18,11 +18,11 @@ export class AuthService {
 
   login(user: User) {
     let url = URL_Dev + '/login';
-    return this.http.post(url, user)
+    //return this.http.post(url, user)
   }
 
   newUser(user: User) {
     let url = URL_Dev + '/newuser';
-    return this.http.post(url, user)
+    //return this.http.post(url, user)
   }
 }
