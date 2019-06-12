@@ -9,24 +9,25 @@
         <div class="g">
           <div>
             <span *ngIf="registerForm.controls['nombre'].errors" >El Nombre es obligatorio</span>
-            <input required type="text" placeholder="Nombre" formControlName="nombre">
+            <input required type="text" placeholder="Nombre" name="nombre" formControlName="nombre">
           </div>
           <div>
             <span *ngIf="registerForm.controls['email'].errors" >El Correo no es valido</span>
-            <input required type="email" placeholder="Correo Electrónico" formControlName="email">
+            <input required type="email" placeholder="Correo Electrónico" name="email" formControlName="email">
           </div>
           <div>
             <span *ngIf="registerForm.controls['password'].errors" >La contraseña es obligatoria</span>
-            <input required type="password" placeholder="Contraseña" formControlName="password">
+            <span *ngIf="registerForm.controls['password'].minlength">Debe tener minimo 6 caracteres</span>
+            <input required type="password" placeholder="Contraseña" name="password" formControlName="password">
           </div>
           <div>
             <span *ngIf="registerForm.controls['password'].value !== registerForm.controls['repassword'].value" >No Coinciden</span>
-            <input required type="password" placeholder="Repite la Contraseña" formControlName="repassword">
+            <input required type="password" placeholder="Repite la Contraseña" name="repassword" formControlName="repassword">
           </div>
         </div>
         <div class="options">
           <div class="rem">
-            <input type="checkbox" formControlName="terms"> 
+            <input type="checkbox" name="terms" formControlName="terms"> 
             <span>Acepto los Términos y Condiciones</span>
           </div>
         </div>
