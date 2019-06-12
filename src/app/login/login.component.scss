@@ -49,6 +49,13 @@ p {
         box-sizing: border-box;
         background: transparent;
         border-bottom: solid 2px rgb(213, 214, 219);
+        &.ng-dirty.ng-invalid {
+            color: #FF6565;
+            border-bottom-color: #FF6565;
+            &::placeholder {
+                color: #FF6565;
+            }
+        }
     }
     & > div {
         position: relative;
@@ -70,6 +77,13 @@ p {
 
 .options {
     height: 42px;
+    ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, 
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        background-color: #43425D;
+    }
+    ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+        background-color: #43425D;
+    }
     .rem {
         float: left;
         color: #43425D;
@@ -78,8 +92,8 @@ p {
         }
         span {
             cursor: default;
-            font-size: 16px;
-            font-weight: 600;
+            font-size: 16px !important;
+            font-weight: 600 !important;
             display: inline-block;
         }
     }
@@ -175,5 +189,14 @@ p {
                 display: inline;
             }
         }
+    }
+    ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, 
+    .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
+        color: white !important;
+        background-color: rgb(77, 72, 182) !important;
+    }
+    ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
+        color: rgb(77, 72, 182) !important;
+        background-color: rgb(77, 72, 182) !important;
     }
 }

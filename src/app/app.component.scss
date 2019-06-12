@@ -36,6 +36,32 @@ h1 {
             padding-bottom: 10px;
             color: rgba(67, 66, 93, 1);
         }
+        .ltitle {
+            display: block;
+            font-size: 14px;
+            font-weight: 600;
+            padding-top: 10px;
+            padding-left: 14px;
+            padding-right: 14px;
+            padding-bottom: 0px;
+            color: rgba(67, 66, 93, 0.4);
+            input,
+            textarea {
+                width: 100%;
+                display: block;
+                font-size: 16px;
+                text-align: center;
+            }
+            &:last-child {
+                padding-bottom: 10px;
+            }
+            span {
+                padding: 0 0;
+                font-size: 16px;
+                font-weight: 200;
+                color: rgba(67, 66, 93, 1);
+            }
+        }
         form {
             width: 100%;
             text-align: center;
@@ -140,7 +166,9 @@ h1 {
                 padding-bottom: 10px;
                 & > div {
                     z-index: 2;
+                    display: table;
                     position: relative;
+                    background: linear-gradient(90deg, white 20%, rgba( 255, 255, 255, 0) 100%);
                 }
                 svg {
                     top: 0;
@@ -151,6 +179,52 @@ h1 {
                 }
             }
         }
+    }
+}
+
+.cntLeft,
+.cntRight {
+    vertical-align: top;
+    display: inline-block;
+    .item {
+        width: 100%;
+    }
+    form {
+        width: 100%;
+    }
+    button {
+        width: 100% !important;
+        max-width: inherit !important;
+        border-radius: 0px 2px 2px 0px;
+        box-shadow: inherit !important;
+        &:hover {
+            transform: inherit !important;
+        }
+    }
+}
+
+.cntLeft {
+    width: 260px;
+    height: auto;
+}
+
+.cntRight {
+    height: auto;
+    width: calc(100% - 260px);
+    form {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    button {
+        width: 100%;
+        margin-bottom: 12px;
+        max-width: inherit !important;
+    }
+    input {
+        flex: 1;
+        flex-wrap:wrap;
+        margin-bottom: 0px !important;
+        width: auto !important;
     }
 }
 
@@ -206,6 +280,13 @@ hr {
         .item {
             width: 50%;
         }
+    }
+}
+
+@media screen and (max-width: 710px) {
+    .cntLeft,
+    .cntRight {
+        width: 100%;
     }
 }
 
