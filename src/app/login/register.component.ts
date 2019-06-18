@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import Swal from 'sweetalert2';
 import { AuthService } from '../services/services.index';
 import { User } from '../models/user.model';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -14,7 +15,7 @@ export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
   validation = '';
 
-  constructor( public authSvc: AuthService) { }
+  constructor( public authSvc: AuthService, public router: Router) { }
 
   ngOnInit() {
     this.registerForm = new FormGroup({
@@ -38,17 +39,17 @@ export class RegisterComponent implements OnInit {
       }) 
       return;
     }
-    console.log(this.registerForm.value); 
+    //console.log(this.registerForm.value); 
     let user = new User(
       this.registerForm.value.nombre,
       this.registerForm.value.email,
       this.registerForm.value.password
     );
-    // this.authSvc.newUser(user)
-    //     .subscribe(res => {
-    //       console.log(res);
-    //       this.router.navigate(['/login']);
-    //     });
+    this.authSvc.newUser(user)
+        .subscribe(res => {
+          console.log(res);
+          this.router.navigate(['/login']);
+        });
          
   }
 
