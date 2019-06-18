@@ -48,7 +48,9 @@ export class RegisterComponent implements OnInit {
     this.authSvc.newUser(user)
         .subscribe(res => {
           console.log(res);
-          this.router.navigate(['/login']);
+          if(res.status === "done"){
+            this.router.navigate(['/login']);
+          }
         });
          
   }

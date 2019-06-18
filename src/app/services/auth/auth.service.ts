@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { URL_Dev } from 'src/app/config/config';
+import { URL_Dev, URL_Test } from 'src/app/config/config';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/models/user.model';
 
@@ -18,13 +18,13 @@ export class AuthService {
 
   login(user: User) {
     console.log(user);
-    let url = URL_Dev + '/auth/login';
+    let url = URL_Test + 'auth/login';
     return this.http.post(url, user)
   }
 
   newUser(user: User) {
     console.log(user);
-    let url = URL_Dev + '/auth/newuser';
+    let url = URL_Test + 'auth/newuser';
     return this.http.post(url, user)
   }
 }

@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { AuthService } from '../services/services.index';
+import { Router } from '@angular/router';
+import { User } from '../models/user.model';
 
 @Component({
   selector: 'app-login',
@@ -9,7 +12,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
 
-  constructor() {
+  constructor(private auth: AuthService, public router: Router) {
     this.loginForm = new FormGroup({
       'email': new FormControl('', [Validators.required, Validators.email]),
       'password': new FormControl('', [Validators.required])
@@ -21,7 +24,18 @@ export class LoginComponent implements OnInit {
  
   sendForm() {
     if(this.loginForm.invalid) {return;}
-    console.log(this.loginForm.value);
+    let user = new User(
+      this.loginForm.value.nombre,
+      this.loginForm.value.email,
+      this.loginForm.value.password
+    );
+    this.auth.login(user)
+      .subscribe(res => {
+        console.log(res);
+        if(res.status === "done") {
+          this.router.navigate(['dashboard'])
+        }
+      })
     this.loginForm.reset();
   }
 
