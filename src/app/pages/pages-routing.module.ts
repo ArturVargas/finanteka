@@ -8,12 +8,15 @@ import { InvestDashboardComponent } from './invest-dashboard/invest-dashboard.co
 import { InvestInfoComponent } from './invest-info/invest-info.component';
 import { ProyectsComponent } from './proyects/proyects.component';
 import { ProfileComponent } from './profile/profile.component';
+import { AuthGuardGuard } from '../services/services.index';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: 'dashboard', component: InvestDashboardComponent, children: [
+  { path: 'dashboard', component: InvestDashboardComponent, 
+    canActivate: [AuthGuardGuard],
+    children: [
     { path: 'invest', component: InvestInfoComponent },
     { path: 'proyects', component: ProyectsComponent },
     { path: 'profile', component: ProfileComponent },
