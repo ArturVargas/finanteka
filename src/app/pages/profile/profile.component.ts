@@ -36,7 +36,7 @@ export class ProfileComponent implements OnInit {
       this.photo = null;
       return;
     }
-    this.photo = file;
+    // this.photo = file;
     console.log(file);
   }
 
