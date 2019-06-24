@@ -2,7 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { InvestFormComponent } from '../invest-form/invest-form.component';
 import { UpdateInfoService } from 'src/app/services/services.index';
+import {FormControl, Validators} from '@angular/forms';
 const eva = require('eva-icons');
+
+export interface Bank {
+  name: string;
+  val: string;
+}
 
 @Component({
   selector: 'app-profile',
@@ -12,6 +18,15 @@ const eva = require('eva-icons');
 export class ProfileComponent implements OnInit {
   photo = 
   'https://scontent.fmex1-1.fna.fbcdn.net/v/t1.0-9/23843345_10204282949109859_332682262452023732_n.jpg?_nc_cat=108&_nc_ht=scontent.fmex1-1.fna&oh=8f727b4c56ef647786b02ea1afd1a349&oe=5D93E8B9';
+  banks: Bank[] = [
+    {name: 'BBVA', val: 'BBVA'},
+    {name: 'Banco Azteca', val: 'Banco Azteca'},
+    {name: 'Banorte', val: 'Banorte'}
+  ];
+  beneficiarioFormControl = new FormControl('', [Validators.required]);
+  cuentaFormControl = new FormControl('', [Validators.required]);
+  claveFormControl = new FormControl('', [Validators.required]);
+  bankControl = new FormControl('', [Validators.required]);
 
   constructor(public modal: MatDialog, public updateSvc: UpdateInfoService) { }
 

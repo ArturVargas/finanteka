@@ -56,6 +56,9 @@ export class LoginComponent implements OnInit {
   }
  
   sendForm() {
+    var login = document.getElementById('formSpace');
+    login.className = 'blur';
+    
     if(this.loginForm.invalid) {return;}
     let user = new User(
       null,
@@ -63,7 +66,7 @@ export class LoginComponent implements OnInit {
       this.loginForm.value.password,
       true
     );
-    this.auth.login(user, this.loginForm.value.rememberme)
+    this.auth.login(user, this.loginForm.value.rememberme);
   }
 
 }

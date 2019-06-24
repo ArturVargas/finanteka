@@ -106,3 +106,26 @@
         }
     }
 }
+
+@media screen and (max-width: 400px) {
+    .projectPic,
+    .projectInfo {
+        width: 100% !important;
+        * {
+            text-align: center !important;
+        }
+    }
+    .projectPic {
+        img {
+            top: 50%;
+            left: 50% !important;
+            width: 80px !important;
+            height: 80px !important;
+            transform: translateX(-50%);
+        }
+    }
+    .projectInfo > * {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+}

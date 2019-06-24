@@ -28,6 +28,9 @@ export class RegisterComponent implements OnInit {
   }
 
   sendForm() {
+    var login = document.getElementById('formSpace');
+    login.className = 'blur';
+    
     if(this.registerForm.invalid) {return;}
     if(!this.registerForm.value.terms){ 
       Swal.fire({

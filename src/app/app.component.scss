@@ -141,6 +141,13 @@ h1 {
     }
 }
 
+.cnt3 {
+    width: 100%;
+    .item {
+        width: 33.3%;
+    }
+}
+
 .cnt4 {
     width: 100%;
     .item {
@@ -276,6 +283,11 @@ hr {
             width: 100%;
         }
     }
+    .cnt3 {
+        .item {
+            width: 50%;
+        }
+    }
     .cnt4 {
         .item {
             width: 50%;
@@ -287,6 +299,14 @@ hr {
     .cntLeft,
     .cntRight {
         width: 100%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .cnt3 {
+        .item {
+            width: 100%;
+        }
     }
 }
 

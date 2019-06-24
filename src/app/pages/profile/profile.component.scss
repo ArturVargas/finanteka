@@ -8,7 +8,7 @@
         background: white !important;
         .editSpace {
             opacity: 1;
-            height: 270px;
+            height: 310px;
             transform: scale(1);
         }
         .info {
@@ -104,4 +104,11 @@
             }
         }
     }
+}
+
+select {
+    height: 40px;
+    margin-bottom: 10px;
+    width: 100% !important;
+    border-radius: 0 !important;
 }

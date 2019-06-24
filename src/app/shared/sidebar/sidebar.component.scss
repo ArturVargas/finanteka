@@ -222,3 +222,12 @@ nav {
         width: calc(100% - 50px);
     }
 }
+
+@media screen and (max-width: 400px) {
+    #container {
+        overflow: auto;
+        position: absolute;
+        box-sizing: border-box;
+        padding: 10px 10px !important;
+    }
+}

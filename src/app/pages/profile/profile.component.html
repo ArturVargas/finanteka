@@ -1,5 +1,105 @@
 <div class="cont">
   <h1>Perfil</h1>
+  <div class="cnt3">
+    <div class="item">
+      <div id="profile" class="target compact">
+        <div class="profileHeader">
+          <button id="edit" class="edit">
+            <i data-eva="edit-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+            <i data-eva="close-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
+          </button>
+          <div class="photo">
+            <img [src]="photo" alt="" (click)="updateImg()">
+            <input type="file" (change)="selectImg($event.target.files[0])" id="imgen" style="display: none;">
+          </div>
+          <div class="info">
+            <label class="name">
+              Arturo Figueroa Vargas
+            </label>
+            <label class="rfc">
+              FIVA831123
+            </label>
+          </div>
+        </div>
+        <form (ngSubmit)="updatePersonInfo()">
+         <section class="editSpace">
+            <span class="ltitle">
+              Nombre
+              <input type="text" value="Arturo Figueroa Vargas">
+            </span>
+            <span class="ltitle">
+              RFC
+              <input type="text" value="FIVA831123" readonly>
+            </span>
+            <span class="ltitle">
+              Dirección
+              <textarea name="" id="" value="" cols="30" rows="2">Ramos Millán No. 61 Col Emiliano Zapata, Naucalpan de Juarez, Estado de México</textarea>
+            </span>
+            <button type="submit">Actualizar</button>
+          </section>
+        </form>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="target">
+        <div class="title">
+          Datos Bancarios
+        </div>
+        <form action="">
+          <span class="ltitle">
+            Beneficiario
+            <input required type="text" name="beneficiario" value="">
+          </span>
+          <span class="ltitle">
+            Banco
+            <select name="banco" id="">
+              <option value="">---</option>
+              <option *ngFor="let bank of banks" [value]="bank.val">
+                {{ bank.name }}
+              </option>
+            </select>
+          </span>
+          <span class="ltitle">
+            Cuenta
+            <input required type="text" name="cuenta" value="">
+          </span>
+          <span class="ltitle">
+            Clave
+            <input required type="text" name="clave" value="">
+          </span>
+          <button style="width: 100% !important;">Actualizar</button>
+        </form>
+        <span>
+          <button mat-raised-button (click)="openMod()">Formulario</button>
+        </span>
+      </div>
+    </div>
+
+    <div class="item">
+      <div class="target">
+          <div class="title">
+            Datos de Contacto
+          </div>
+          <form action="">
+            <span class="ltitle">
+              Teléfono
+              <input type="text" name="phone" value="5524361232">
+            </span>
+            <span class="ltitle">
+              Correo Electrónico
+              <input type="text" name="email" value="arturvarg@gmail.com">
+            </span>
+            <span class="ltitle">
+              Facebook
+              <input type="text" name="facebook" value="https://www.facebook.com/arturo.castanon.5?fref=hovercard&hc_location=chat">
+            </span>
+            <button style="width: 100% !important;">Actualizar</button>
+          </form>
+      </div>
+    </div>
+  </div>
+  <!--
   <div class="cntLeft">
     <div class="item">
       <div id="profile" class="target compact">
@@ -68,4 +168,5 @@
       </div>
     </div>
   </div>
+  -->
 </div>
