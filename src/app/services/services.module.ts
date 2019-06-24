@@ -2,7 +2,9 @@ import { NgModule } from "@angular/core";
 import { CommonModule } from '@angular/common';
 import {
     AuthService,
-    AuthGuardGuard
+    AuthGuardGuard,
+    UploadPhotoService,
+    UpdateInfoService
  } from './services.index';
 
 @NgModule({
@@ -11,7 +13,9 @@ import {
     ],
     providers: [
         AuthService,
-        AuthGuardGuard
+        AuthGuardGuard,
+        UploadPhotoService,
+        UpdateInfoService
     ],
     declarations: []
 })

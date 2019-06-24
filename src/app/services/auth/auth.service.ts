@@ -51,7 +51,7 @@ export class AuthService {
   newUser(user: User) {
     console.log(user);
     let url = URL_Test + 'auth/newuser';
-    return this.http.post(url, user)
+    return this.http.post(url, user);
   }
 
 

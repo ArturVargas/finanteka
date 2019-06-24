@@ -9,7 +9,8 @@
             <i data-eva="close-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
           </button>
           <div class="photo">
-            <img src="https://scontent.fmex1-1.fna.fbcdn.net/v/t1.0-9/23843345_10204282949109859_332682262452023732_n.jpg?_nc_cat=108&_nc_ht=scontent.fmex1-1.fna&oh=8f727b4c56ef647786b02ea1afd1a349&oe=5D93E8B9" alt="">
+            <img [src]="photo" alt="" (click)="updateImg()">
+            <input type="file" (change)="selectImg($event.target.files[0])" id="imgen" style="display: none;">
           </div>
           <div class="info">
             <label class="name">
@@ -20,21 +21,23 @@
             </label>
           </div>
         </div>
-        <section class="editSpace">
-          <span class="ltitle">
-            Nombre
-            <input type="text" value="Arturo Figueroa Vargas">
-          </span>
-          <span class="ltitle">
-            RFC
-            <input type="text" value="FIVA831123">
-          </span>
-          <span class="ltitle">
-            Dirección
-            <textarea name="" id="" value="" cols="30" rows="2">Ramos Millán No. 61 Col Emiliano Zapata</textarea>
-          </span>
-          <button>Actualizar</button>
-        </section>
+        <form (ngSubmit)="updatePersonInfo()">
+         <section class="editSpace">
+            <span class="ltitle">
+              Nombre
+              <input type="text" value="Arturo Figueroa Vargas">
+            </span>
+            <span class="ltitle">
+              RFC
+              <input type="text" value="FIVA831123" readonly>
+            </span>
+            <span class="ltitle">
+              Dirección
+              <textarea name="" id="" value="" cols="30" rows="2">Ramos Millán No. 61 Col Emiliano Zapata</textarea>
+            </span>
+            <button type="submit">Actualizar</button>
+          </section>
+        </form>
       </div>
     </div>
   </div>
