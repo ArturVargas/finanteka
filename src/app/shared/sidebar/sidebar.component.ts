@@ -24,5 +24,15 @@ export class SidebarComponent implements OnInit {
     this.auth.logout();
   }
 
+  showPane (val) {
+    var pane = val + 'Action';
+    var panel = document.getElementById(pane);
+    var stl = panel.className;
+    console.log(stl);
+    stl == 'pane open' ? 
+      panel.setAttribute('class', 'pane') : 
+      panel.setAttribute('class', 'pane open');
+  }
+
 }
 

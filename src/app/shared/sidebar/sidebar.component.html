@@ -5,7 +5,7 @@
         <input type="text" placeholder="Buscar emprendedores, negocios o ayuda">
       </div>
       <div id="items">
-        <button id="user">
+        <button id="user" (click)='showPane("user")'>
           <label>Arturo Figueroa</label>
           <img src="https://scontent.fmex1-1.fna.fbcdn.net/v/t1.0-9/23843345_10204282949109859_332682262452023732_n.jpg?_nc_cat=108&_nc_ht=scontent.fmex1-1.fna&oh=8f727b4c56ef647786b02ea1afd1a349&oe=5D93E8B9" alt="">
         </button>
@@ -48,12 +48,16 @@
             Perfil
           </span>
         </a>
-        <a (click)="logout()">
-          <i data-eva="power-outline" data-eva-width="20" data-eva-height="20"  data-eva-fill="#A5A4BF"></i>
-          <span>
-            Salir
-          </span>
-        </a>
+      </div>
+    </div>
+
+    <div id="actions">
+      <div id="userAction" class="pane">
+        <button>Configuración</button>
+        <hr>
+        <button>Feedback</button>
+        <hr>
+        <button (click)="logout()">Cerrar Sesión</button>
       </div>
     </div>
 
