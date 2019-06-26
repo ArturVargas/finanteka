@@ -4,11 +4,12 @@ import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
 
+
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
-  token = ''
+  token = '';
 
   constructor(private http: HttpClient, public router: Router) { } 
   cargarStorage() {
@@ -22,6 +23,7 @@ export class AuthService {
   logout() {
     this.token = '';
     localStorage.removeItem('token');
+    localStorage.removeItem('user');
     this.router.navigate(['/home']);
   }
 
@@ -39,12 +41,13 @@ export class AuthService {
 
     let url = URL_Test + 'auth/login';
     return this.http.post(url, user)
-      .subscribe((res: any) => {
-        if(res.token) {
-          console.log(res);
-          localStorage.setItem('token', res.token);
-          this.router.navigate(['/dashboard'])
-        }
+      .subscribe((res:any) => {
+          if(res.token) {
+            console.log(res);
+            localStorage.setItem('token', res.token);
+            localStorage.setItem('user', JSON.stringify(res.data));
+            this.router.navigate(['/dashboard'])
+          }
       });
   }
 

@@ -10,6 +10,7 @@ const eva = require('eva-icons');
   styleUrls: ['./sidebar.component.scss']
 })
 export class SidebarComponent implements OnInit {
+  usuario = JSON.parse(localStorage.getItem('user'));
 
   constructor(private _bottomSheet: MatBottomSheet, public auth: AuthService) { }
 

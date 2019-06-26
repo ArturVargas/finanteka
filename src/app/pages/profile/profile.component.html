@@ -14,26 +14,28 @@
           </div>
           <div class="info">
             <label class="name">
-              Arturo Figueroa Vargas
+              {{usuario.name}}
             </label>
             <label class="rfc">
-              FIVA831123
+              FIVA831123C80
             </label>
           </div>
         </div>
-        <form (ngSubmit)="updatePersonInfo()">
+        <form (ngSubmit)="updatePersonInfo()" [formGroup]="personForm">
          <section class="editSpace">
             <span class="ltitle">
               Nombre
-              <input type="text" value="Arturo Figueroa Vargas">
+              <input type="text" formControlName="name">
             </span>
             <span class="ltitle">
               RFC
-              <input type="text" value="FIVA831123" readonly>
+              <input type="text" formControlName="rfc">
             </span>
             <span class="ltitle">
               Dirección
-              <textarea name="" id="" value="" cols="30" rows="2">Ramos Millán No. 61 Col Emiliano Zapata, Naucalpan de Juarez, Estado de México</textarea>
+              <textarea cols="30" rows="2" formControlName="address">
+                Ramos Millán No. 61 Col Emiliano Zapata, Naucalpan de Juarez, Estado de México
+              </textarea>
             </span>
             <button type="submit">Actualizar</button>
           </section>
@@ -46,14 +48,14 @@
         <div class="title">
           Datos Bancarios
         </div>
-        <form action="">
+        <form (ngSubmit)="updateBankData()" [formGroup]="bankForm">
           <span class="ltitle">
             Beneficiario
-            <input required type="text" name="beneficiario" value="">
+            <input required type="text" name="beneficiario" value="{{usuario.name}}" formControlName="beneficiary">
           </span>
           <span class="ltitle">
             Banco
-            <select name="banco" id="">
+            <select name="banco" id="" formControlName="bank">
               <option value="">---</option>
               <option *ngFor="let bank of banks" [value]="bank.val">
                 {{ bank.name }}
@@ -62,13 +64,13 @@
           </span>
           <span class="ltitle">
             Cuenta
-            <input required type="text" name="cuenta" value="">
+            <input required type="text" name="cuenta" formControlName="account">
           </span>
           <span class="ltitle">
-            Clave
-            <input required type="text" name="clave" value="">
+            Clabe
+            <input required type="text" name="clave" formControlName="clabe">
           </span>
-          <button style="width: 100% !important;">Actualizar</button>
+          <button type="submit" style="width: 100% !important;">Actualizar</button>
         </form>
         <span>
           <button mat-raised-button (click)="openMod()">Formulario</button>
@@ -81,20 +83,17 @@
           <div class="title">
             Datos de Contacto
           </div>
-          <form action="">
+          <form (ngSubmit)="updateContactInfo()" [formGroup]="contactForm">
             <span class="ltitle">
               Teléfono
-              <input type="text" name="phone" value="5524361232">
+              <input type="text" name="phone" formControlName="phone">
             </span>
             <span class="ltitle">
               Correo Electrónico
-              <input type="text" name="email" value="arturvarg@gmail.com">
+              <input type="text" name="email" value="{{usuario.email}}" formControlName="email">
             </span>
-            <span class="ltitle">
-              Facebook
-              <input type="text" name="facebook" value="https://www.facebook.com/arturo.castanon.5?fref=hovercard&hc_location=chat">
-            </span>
-            <button style="width: 100% !important;">Actualizar</button>
+            
+            <button style="width: 100% !important;" type="submit">Actualizar</button>
           </form>
       </div>
     </div>
