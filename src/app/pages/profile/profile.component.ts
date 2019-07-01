@@ -3,6 +3,7 @@ import { MatDialog } from '@angular/material/dialog';
 import { InvestFormComponent } from '../invest-form/invest-form.component';
 import { UpdateInfoService } from 'src/app/services/services.index';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Account } from 'src/app/models/account.model';
 const eva = require('eva-icons');
 
 export interface Bank {
@@ -86,8 +87,23 @@ export class ProfileComponent implements OnInit {
 
   updatePersonInfo() {
     console.log('Datos Personales Actualizados');
-    console.log(this.personForm);
-    console.log(this.personForm.value);
+    // console.log(this.personForm);
+    // console.log(this.personForm.value);
+    let personInfo = new Account(
+      this.personForm.value.name,
+      this.contactForm.value.email,
+      '12345',
+      this.contactForm.value.phone,
+      this.personForm.value.rfc,
+      null,
+      null,
+      null,
+      null,
+      null,
+      " ",
+      this.usuario._id
+    )
+    this.updateSvc.updateUser(personInfo)
   }
 
   updateContactInfo() {
