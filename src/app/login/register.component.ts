@@ -27,10 +27,8 @@ export class RegisterComponent implements OnInit {
     })
   }
 
-  sendForm() {
+  sendForm() {    
     var login = document.getElementById('formSpace');
-    login.className = 'blur';
-    
     if(this.registerForm.invalid) {return;}
     if(!this.registerForm.value.terms){ 
       Swal.fire({
@@ -42,20 +40,13 @@ export class RegisterComponent implements OnInit {
       }) 
       return;
     }
-    //console.log(this.registerForm.value); 
+    login.className = 'blur';
     let user = new User(
       this.registerForm.value.nombre,
       this.registerForm.value.email,
       this.registerForm.value.password
     );
-    this.authSvc.newUser(user)
-        .subscribe(res => {
-          console.log(res);
-          // if(res.status === "done"){
-            this.router.navigate(['/login']);
-          // }
-        });
-         
+    this.authSvc.newUser(user);
   }
 
 }

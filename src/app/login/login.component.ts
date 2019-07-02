@@ -57,9 +57,9 @@ export class LoginComponent implements OnInit {
  
   sendForm() {
     var login = document.getElementById('formSpace');
-    login.className = 'blur';
     
     if(this.loginForm.invalid) {return;}
+    login.className = 'blur';
     let user = new User(
       null,
       this.loginForm.value.email,

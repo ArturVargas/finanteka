@@ -3,7 +3,7 @@ import { URL_Dev, URL_Test } from 'src/app/config/config';
 import { HttpClient } from '@angular/common/http';
 import { User } from 'src/app/models/user.model';
 import { Router } from '@angular/router';
-
+import Swal from 'sweetalert2';
 
 @Injectable({
   providedIn: 'root'
@@ -33,6 +33,7 @@ export class AuthService {
   }
 
   login(user: User, rememberme = false) {
+    var login = document.getElementById('formSpace');
     if(rememberme) {
       localStorage.setItem('email', user.email)
     } else {
@@ -48,14 +49,39 @@ export class AuthService {
             localStorage.setItem('user', JSON.stringify(res.data));
             this.router.navigate(['/dashboard'])
           }
+      }, (err) => {
+        login.className = '';
+        Swal.fire({
+          type: 'error',
+          title: err.error.mensaje ,
+          showConfirmButton: false,
+          timer: 2500
+        });
       });
   }
 
   newUser(user: User) {
-    console.log(user);
+    var login = document.getElementById('formSpace');
     let url = URL_Test + 'auth/newuser';
-    return this.http.post(url, user);
-  }
+    return this.http.post(url, user)
+      .subscribe(res => {
+        Swal.fire({
+          type: 'success',
+          title: 'El usuario se creo Exitosamente',
+          showConfirmButton: false,
+          timer: 2500
+        });
+        this.router.navigate(['/login']);
+      }, (err) => {
+         login.className = '';
+         Swal.fire({
+          type: 'error',
+          title: err.error.mensaje ,
+          showConfirmButton: false,
+          timer: 2500
+        });
+      });
+  };
 
 
   isLogged(){
