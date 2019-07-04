@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./invest-dashboard.component.scss']
 })
 export class InvestDashboardComponent implements OnInit {
-
+ 
   constructor() { }
 
   ngOnInit() {

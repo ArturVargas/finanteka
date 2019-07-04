@@ -1,6 +1,6 @@
 <div class="cont">
   <h1>Vista General</h1>
-  <div class="cnt4">
+  <div class="cnt4" *ngFor="let money of moneyInfo">
     <div class="item">
       <div class="target">
         <span class="title">
@@ -8,7 +8,8 @@
         </span>
         <div class="val">
           <div>
-            $ 3,000 MXN
+            $ {{money.valorCuenta | currency:'MN':''}} MXN
+            <!-- $ 3,000 MXN -->
           </div>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -32,7 +33,8 @@
         </span>
         <div class="val">
           <div>
-            $ 1,300 MXN
+            $ {{money.dineroDisponible | currency:'MXN':''}} MXN
+            <!-- $ 1,300 MXN -->
           </div>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -56,7 +58,7 @@
         </span>
         <div class="val">
           <div>
-            $ 750 MXN
+            $ {{money.enFondeo | currency:'MXN':''}} MXN
           </div>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -80,7 +82,7 @@
         </span>
         <div class="val">
           <div>
-            $ 850 MXN
+            $ {{money.pendientePago | currency:'MXN':''}} MXN
           </div>
           <svg 
             xmlns="http://www.w3.org/2000/svg" 
@@ -111,7 +113,7 @@
           [legend]="ChartLegend"
           [chartType]="ChartType"
           [colors]="ChartColor"
-          (chartHover)="chartHovered($event)"
+          
         ></canvas>
       </div>
     </div>
@@ -126,35 +128,38 @@
           Indique el Importe que desea retirar y en que cuanta desea abonarlo. <br>
           Puede tardar de 2 a 3 días habiles en concluir esta transferencia.
         </span>
-        <form action="">
-          <input type="text" placeholder="Dinero Disponible ($ 1,300 MXN)">
-          <input type="text" placeholder="Importe">
-          <select style="height: 34px; margin-top: 5px; display: block;" name="" id="">
+        <form (ngSubmit)='withdrawMoney()' [formGroup]="withdrawalsForm">
+          <input type="text" placeholder="Dinero Disponible ($ 1,300 MXN)" formControlName="avaliable" readonly>
+          <input type="text" placeholder="Importe" formControlName="amount" (keyup)="validAmount($event)">
+          <select style="height: 34px; margin-top: 5px; display: block;" name="" id="" formControlName="bankAccount">
             <option value="">Cuenta</option>
+            <option value="1234567891111256">1234567891111256</option>
           </select>
-          <button style="margin-bottom: 25px;">Retirar Fondos</button>
+          <button style="margin-bottom: 25px;" type="submit" [disabled]="invalidAmount || withdrawalsForm.invalid">Retirar Fondos</button>
         </form>
       </div>
     </div>
-    <div class="item">
+    <div class="item" *ngFor="let item of info">
       <div class="target">
         <div class="title">Rendimientos</div>
         <div class="circle" style="margin-bottom: 10px;">
           <div class="percent" style="height: 19.7% !important;"></div>
           <div class="txt">
-            <div>19.7%</div>
+            <div>{{item.rendimientos | percent:'2.2' }}</div>
           </div>
         </div>
         <div class="dbl">
           <span>Intereses Recibidos</span>
           <div class="val">
-            $ 4,500 MXN
+            $ {{item.interesRecib | currency:'MXN':''}} MXN
+            <!-- $ 4,500 MXN -->
           </div>
         </div>
         <div class="dbl">
           <span>Comisiones</span>
           <div class="val">
-            $ 200 MXN
+            $ {{item.comisiones | currency:'MXN':''}} MXN
+            <!-- $ 200 MXN -->
           </div>
         </div>
       </div>
@@ -162,86 +167,3 @@
   </div>
 
 </div>
-<!--
-<div class="container my-5">
-  <h3 class="text-center">Resumen de tu Cuenta</h3>
-  <div class="row my-4">
-    <div class="col">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            Rendimientos
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <h3>19.7%</h3>
-          <p>
-            $4,500
-            <span>Intereses Recibidos</span>
-          </p>
-          <mat-list>
-            <h3 mat-subheader>Comisiones</h3>
-            <mat-list-item>
-              <h4>$200</h4>
-            </mat-list-item>
-          </mat-list>
-        </mat-card-content>
-      </mat-card>
-    </div>
-    <div class="col">
-      <mat-card>
-        <mat-card-header>
-          <mat-card-title>
-            Valor de la Cuenta.
-          </mat-card-title>
-        </mat-card-header>
-        <mat-card-content>
-          <h3>$3,000</h3>
-          <mat-list>
-            <h3 mat-subheader>Dinero Disponible</h3>
-            <mat-list-item>
-              <h4>$1,300</h4>
-            </mat-list-item>
-            <h3 mat-subheader>En Fondeo</h3>
-            <mat-list-item>
-              <h4>$750</h4>
-            </mat-list-item>
-            <h3 mat-subheader>Pendiente de Pago</h3>
-            <mat-list-item>
-              <h4>$850</h4>
-            </mat-list-item>
-          </mat-list>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </div>
- </div>
- <div class="container mb-5">
-    <h3>Retirar Fondos</h3>
-    <p>Indique el Importe que desea retirar y en que cuanta desea abonarlo.</p>
-    <p>Puede tardar de 2 a 3 días habiles en concluir esta transferencia.</p>
-    <div>
-      <form action="">
-        <div class="form-group">
-          <label for="">Dinero Disponible</label>
-          <input type="text" class="form-control" readonly value="$1,300">
-        </div>
-        <div class="form-group">
-          <label for="">Importe</label>
-          <input type="text" class="form-control">
-        </div>
-        <div class="form-group">
-          <label for="">Cuenta</label>
-          <select name="" id="" class="form-control">
-            <option value="1">################</option>
-            <option value="">$$$$$$$$$$$$$$$$</option>
-          </select>
-        </div>
-        <div>
-          <button mat-raised-button>Retirar Fondos</button>
-        </div>
-      </form>
-    </div>
- </div>
-
--->

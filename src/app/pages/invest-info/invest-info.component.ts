@@ -1,6 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ChartDataSets, ChartOptions, ChartType } from 'chart.js';
 import { Label, Color } from 'ng2-charts';
+import { AccountInfoService } from '../../services/services.index';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import Swal from 'sweetalert2';
+import { type } from 'os';
 
 @Component({
   selector: 'app-invest-info',
@@ -9,6 +13,7 @@ import { Label, Color } from 'ng2-charts';
 })
 export class InvestInfoComponent implements OnInit {
 
+  withdrawalsForm: FormGroup;
   public ChartOptions: ChartOptions = {
     responsive: true,
     maintainAspectRatio: false,
@@ -41,8 +46,17 @@ export class InvestInfoComponent implements OnInit {
     { data: [], label: 'Dinero Disponible' },
     { data: [], label: 'En Fondeo' }
   ];
-
-  constructor() { }
+  moneyInfo;
+  info;
+  invalidAmount = true;
+  
+  constructor(public infoSvc: AccountInfoService) { 
+    this.withdrawalsForm = new FormGroup({
+       avaliable:  new FormControl('', [Validators.required, Validators.pattern('[0-9]*')]),
+       amount: new FormControl('', [Validators.required]),
+       bankAccount: new FormControl('', [Validators.required, Validators.minLength(16)])
+    });
+  }
 
   ngOnInit() {
     var ctx = document.getElementsByTagName('canvas')[0].getContext("2d");
@@ -56,21 +70,50 @@ export class InvestInfoComponent implements OnInit {
     this.GradientFill.addColorStop(1, "rgba( 52, 226, 156, 0)");
     this.ChartColor[1].backgroundColor = this.GradientFill;
     this.calcular();
+    this.moneyInfo = this.infoSvc.getMoneyAccount()
+    console.log(this.moneyInfo);
+    this.info = this.infoSvc.getInfoAccount()
+    console.log(this.info);
+    this.withdrawalsForm.get('avaliable').setValue(this.moneyInfo[0].dineroDisponible);
   }
 
-  chartHovered({event, active }: {event: MouseEvent, active:{}[]}) {
-    console.log(event, active);
-  }
 
   calcular() {
     const data = [
-      1000,800,1000,1100,1000,1300
+      1000,400,1050,980,1120,70
     ];
     const data2 = [
       1100,700,1050,900,1100,750
     ];
     this.ChartData[0].data = data;
     this.ChartData[1].data = data2;
+  }
+
+  validAmount(event) {
+    let importe = Number(event.target.value);
+    let disponible = this.withdrawalsForm.get('avaliable').value;
+    if(importe > disponible) {
+      Swal.fire({
+        type: 'warning', 
+        title: 'El importe no debe ser mayor al dinero disponible',
+        showConfirmButton: false,
+        timer: 2500
+      });
+      this.invalidAmount = true
+      return;
+    }
+    this.invalidAmount = false;
+  }
+
+  withdrawMoney() {
+    Swal.fire({
+      type: 'success', 
+      title: 'La Operación se realizo Exitosamente',
+      showConfirmButton: false,
+      timer: 2200
+    });
+    //console.log(this.withdrawalsForm.value);
+    this.infoSvc.moveMoneyfromAccount(this.withdrawalsForm.value)
   }
 
 }
