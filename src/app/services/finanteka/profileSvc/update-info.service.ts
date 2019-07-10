@@ -18,11 +18,33 @@ export class UpdateInfoService {
   };
   constructor(public http: HttpClient, public imgSvc: UploadPhotoService) { }
 
-  updateUser( user: Account) {
-    let url = URL_Test + `user/update/${user._id}`;
+  getUserInfo() {
+    // Toda la info del usuario para retornarla en el perfil.
+  }
+
+  updateUserInfo(user) {
+    const url = URL_Test + `user/update/${user._id}`;
     console.log(url);
     console.log(user);
     //return this.http.put(url, user, this.httpOptions)
+      // .map( (res: any) => {
+        
+      // })
+  };
+
+  updateBankInfo( bankInfo: Account) {
+    const url = URL_Test + `bank/info/update/${bankInfo._id}`;
+    console.log(bankInfo);
+    //return this.http.put(url, bankInfo, this.httpOptions)
+      // .map( (res: any) => {
+        
+      // })
+  };
+
+  updateContactInfo( contactInfo ) {
+    const url = URL_Test + `user/contact/update/${contactInfo._id}`;
+    console.log(contactInfo);
+    //return this.http.put(url, contactInfo, this.httpOptions)
       // .map( (res: any) => {
         
       // })

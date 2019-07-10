@@ -1,23 +1,23 @@
 <div class="cont">
   <h1>Proyectos</h1>
   <div class="cnt2">
-    <div class="item">
+    <div class="item" *ngFor="let proyect of proyects; let i = index">
       <div class="target">
         <div class="projectPic">
-          <img src="https://media.npr.org/assets/img/2017/05/03/alyan_hala_credit-beowulf-sheehan_sq-7327cd520f8358f81c2e88c4cdf4485041ad6cc4-s800-c85.jpg" alt="">
+          <img [src]="proyect.img" alt="">
         </div>
         <div class="projectInfo">
-          <div class="title">Las Exitosas</div>
+          <div class="title">{{proyect.title}}</div>
           <div class="dbl">
             <span class="stitle">Monto</span>
             <div class="val">
-              $ 93,000 MXN
+              $ {{proyect.monto}} MXN
             </div>
           </div>
           <div class="dbl">
             <span class="stitle">Plazo</span>
             <div class="val">
-              16 semanas
+              {{proyect.plazo}}
             </div>
           </div>
           <div>
@@ -25,7 +25,7 @@
             <div class="val">
               <div class="bar">
                 <div class="percent" style="width: 6.89% !important;"></div>
-                <div class="text">6.89 %</div>
+                <div class="text">{{proyect.tasaRetorno | percent:'2.2'}}</div>
               </div>
             </div>
           </div>
@@ -34,26 +34,26 @@
         <div class="dbl">
           <span>Integrantes</span>
           <div class="val">
-            7
+            {{proyect.integrantes}}
           </div>
         </div>
         <div class="dbl">
           <span>Ciclo</span>
           <div class="val">
-            1
+            {{proyect.ciclo}}
           </div>
         </div>
         <hr>
         <div class="invertir">
-          <form action="">
-            <input type="text" placeholder="Invertir">
+          <form (ngSubmit)="investRequest(i)" [formGroup]="addMoney">
+            <input type="text" placeholder="Invertir" formControlName="quantity">
             <button>Fondear</button>
           </form>
         </div>
       </div>
     </div>
     
-    <div class="item">
+    <!-- <div class="item">
       <div class="target">
         <div class="projectPic">
           <img src="https://girls20.org/wp-content/uploads/2018/06/2.png" alt="">
@@ -103,7 +103,7 @@
           </form>
         </div>
       </div>
-    </div>
+    </div> -->
 
   </div>
 </div>

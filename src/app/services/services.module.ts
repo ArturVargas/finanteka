@@ -5,7 +5,8 @@ import {
     AuthGuardGuard,
     UploadPhotoService,
     UpdateInfoService,
-    AccountInfoService
+    AccountInfoService,
+    ProyectsService
  } from './services.index';
 
 @NgModule({
@@ -17,7 +18,8 @@ import {
         AuthGuardGuard,
         UploadPhotoService,
         UpdateInfoService,
-        AccountInfoService
+        AccountInfoService,
+        ProyectsService
     ],
     declarations: []
 })

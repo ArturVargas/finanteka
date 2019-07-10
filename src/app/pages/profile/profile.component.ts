@@ -4,6 +4,7 @@ import { InvestFormComponent } from '../invest-form/invest-form.component';
 import { UpdateInfoService } from 'src/app/services/services.index';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Account } from 'src/app/models/account.model';
+import { ContactInfo } from 'src/app/models/contactInfo.model';
 const eva = require('eva-icons');
 
 export interface Bank {
@@ -29,11 +30,7 @@ export class ProfileComponent implements OnInit {
     {name: 'Banco Azteca', val: 'Banco Azteca'},
     {name: 'Banorte', val: 'Banorte'}
   ];
-  // beneficiarioFormControl = new FormControl('', [Validators.required]);
-  // cuentaFormControl = new FormControl('', [Validators.required]);
-  // claveFormControl = new FormControl('', [Validators.required]);
-  // bankControl = new FormControl('', [Validators.required]);
-
+  
   constructor(public modal: MatDialog, public updateSvc: UpdateInfoService) {
     console.log(this.usuario);
    }
@@ -87,35 +84,39 @@ export class ProfileComponent implements OnInit {
 
   updatePersonInfo() {
     console.log('Datos Personales Actualizados');
-    // console.log(this.personForm);
-    // console.log(this.personForm.value);
-    let personInfo = new Account(
-      this.personForm.value.name,
-      this.contactForm.value.email,
-      '12345',
-      this.contactForm.value.phone,
-      this.personForm.value.rfc,
-      null,
-      null,
-      null,
-      null,
-      null,
-      " ",
-      this.usuario._id
-    )
-    this.updateSvc.updateUser(personInfo)
+    console.log(this.personForm.value);
+    console.log(this.usuario);
+     let personInfo = (
+       this.personForm.value.name,
+       this.personForm.value.rfc,
+       this.personForm.value.address,
+       this.usuario._id
+     );
+     this.updateSvc.updateUserInfo(personInfo);
   }
 
   updateContactInfo() {
     console.log('Datos de Contacto Actualizados');
-    console.log(this.contactForm);
     console.log(this.contactForm.value);
+    let contactInfo = new ContactInfo(
+      this.contactForm.value.phone,
+      this.contactForm.value.email,
+      this.usuario._id
+    );
+    this.updateSvc.updateContactInfo(contactInfo);
   }
 
   updateBankData() {
     console.log('Datos Bancarios Actualizados');
-    console.log(this.bankForm);
     console.log(this.bankForm.value);
+    let bankInfo = new Account(
+      this.bankForm.value.beneficiary,
+      this.bankForm.value.bank,
+      this.bankForm.value.account,
+      this.bankForm.value.clabe,
+      this.usuario._id
+    );
+    this.updateSvc.updateBankInfo(bankInfo);
   }
 
   openMod() {
