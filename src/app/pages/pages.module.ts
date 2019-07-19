@@ -20,6 +20,7 @@ import { YieldsCalculatorComponent } from './yields-calculator/yields-calculator
 import { ProyectsComponent } from './proyects/proyects.component';
 import { ProfileComponent } from './profile/profile.component';
 import { InvestInfoComponent } from './invest-info/invest-info.component';
+import { FundedProyectsComponent } from './funded-proyects/funded-proyects.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,8 @@ import { InvestInfoComponent } from './invest-info/invest-info.component';
     YieldsCalculatorComponent,
     ProyectsComponent,
     ProfileComponent,
-    InvestInfoComponent
+    InvestInfoComponent,
+    FundedProyectsComponent
   ],
   imports: [
     BrowserModule,
