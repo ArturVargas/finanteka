@@ -29,6 +29,7 @@
         }
         .stitle {
             text-align: left;
+            font-weight: 600;
             padding-bottom: 0px !important;
         }
         .val {
@@ -41,13 +42,13 @@
             .bar {
                 height: 25px;
                 position: absolute;
-                background: #F0F2F8;
+                background: rgb(240, 248, 247);
                 border-radius: 4px 4px;
                 width: calc(100% - 20px);
                 .percent{
                     width: 6.89%;
                     height: 25px;
-                    background: #3B86FF;
+                    background: #239c81;
                     border-radius: 4px 4px;
                 }
                 .text {
@@ -57,7 +58,7 @@
                     line-height: 24px;
                     position: absolute;
                     padding-left: 10px;
-                    text-shadow: 2px 2px 4px #3B86FF;
+                    text-shadow: 2px 2px 4px #239c81;
                 }
             }
         }
@@ -65,6 +66,7 @@
     .dbl {
         padding-top: 0px !important;
         span {
+            font-weight: 600;
             padding: 0 0 !important;
         }
         .val {

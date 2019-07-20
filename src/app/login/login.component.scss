@@ -2,8 +2,7 @@ header {
     width: 50%;
     height: 100%;
     position: absolute;
-    background-color: rgb(210, 67, 84); 
-    background-color: rgb(77, 72, 182); 
+    background-color: #239c81; 
     background-image: url("../../assets/img/backs/bg-girl-02.jpg"); 
     background-blend-mode: multiply;
     background-position: top;
@@ -79,14 +78,14 @@ p {
     height: 42px;
     ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, 
     .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
-        background-color: #43425D;
+        background-color: #239c81;
     }
     ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
-        background-color: #43425D;
+        background-color: #239c81;
     }
     .rem {
         float: left;
-        color: #43425D;
+        color: #239c81;
         input {
             width: 30px;
         }
@@ -102,7 +101,7 @@ p {
         a {
             font-size: 16px;
             font-weight: 600;
-            color: #43425D;
+            color: #239c81;
         }
     }
 }
@@ -117,7 +116,7 @@ p {
         color: white;
         border: solid 0;
         margin-right: 20px;
-        background: #43425D;
+        background: #239c81;
     }
 }
 
@@ -127,7 +126,7 @@ p {
     position: absolute;
     transform: translateX(-50%);
     font-size: 16px;
-    color: #43425D;
+    color: #239c81;
 }
 
 .or {
@@ -171,7 +170,7 @@ p {
         width: 100%;
         height: 100%;
         position: absolute;
-        background: rgba( 67, 66, 93, 0.3);
+        background: rgba(66, 92, 93, 0.3);
     }
     &::after {
         top: 50%;
@@ -184,8 +183,8 @@ p {
         transform: translate(-50%, -50%);
         animation: wait 1s infinite normal;
         border: solid 12px rgba( 255, 255, 255, 0.7);
-        border-bottom-color: rgba(67, 66, 93,0.9);
-        border-top-color: rgba(67, 66, 93,0.9);
+        border-bottom-color: rgba(66, 92, 93,0.9);
+        border-top-color: rgba(66, 92, 93,0.9);
     }
 }
 
@@ -193,20 +192,20 @@ p {
     0% {
         transform: translate(-50%, -50%) rotate(0deg) scale(1);
         border: solid 12px rgba( 255, 255, 255, 0.7);
-        border-bottom-color: rgba(67, 66, 93,0.9);
-        border-top-color: rgba(67, 66, 93,0.9);
+        border-bottom-color: rgba(66, 92, 93,0.9);
+        border-top-color: rgba(66, 92, 93,0.9);
     }
     50% {
         transform: translate(-50%, -50%) rotate(180deg) scale(.7);
-        border: solid 12px rgba( 67, 66, 93, 0.7);
+        border: solid 12px rgba( 66, 92, 93, 0.7);
         border-bottom-color: rgba(255, 255, 255,0.9);
         border-top-color: rgba(255, 255, 255,0.9);
     }
     100% {
         transform: translate(-50%, -50%) rotate(360deg) scale(1);
         border: solid 12px rgba( 255, 255, 255, 0.7);
-        border-bottom-color: rgba(67, 66, 93,0.9);
-        border-top-color: rgba(67, 66, 93,0.9);
+        border-bottom-color: rgba(66, 92, 93,0.9);
+        border-top-color: rgba(66, 92, 93,0.9);
     }
 }
 
@@ -243,10 +242,10 @@ p {
     ::ng-deep .mat-checkbox-checked.mat-accent .mat-checkbox-background, 
     .mat-checkbox-indeterminate.mat-accent .mat-checkbox-background {
         color: white !important;
-        background-color: rgb(77, 72, 182) !important;
+        background-color: #239c81 !important;
     }
     ::ng-deep .mat-checkbox:not(.mat-checkbox-disabled).mat-accent .mat-checkbox-ripple .mat-ripple-element {
-        color: rgb(77, 72, 182) !important;
-        background-color: rgb(77, 72, 182) !important;
+        color: #239c81 !important;
+        background-color: #239c81 !important;
     }
 }

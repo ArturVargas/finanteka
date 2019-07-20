@@ -1,6 +1,6 @@
 h1 {
     font-size: 28px;
-    color: #43425D;
+    color: #239c81;
     font-weight: 200;
     padding-top: 28px;
     padding-left: 12px;
@@ -24,9 +24,6 @@ h1 {
         canvas {
             height: 300px !important;
         }
-        span.title {
-            text-align: left !important;
-        }
         .title {
             display: block;
             font-size: 18px;
@@ -34,7 +31,7 @@ h1 {
             padding-left: 14px;
             padding-right: 14px;
             padding-bottom: 10px;
-            color: rgba(67, 66, 93, 1);
+            color: rgb(35, 156, 129);
         }
         .ltitle {
             display: block;
@@ -44,7 +41,7 @@ h1 {
             padding-left: 14px;
             padding-right: 14px;
             padding-bottom: 0px;
-            color: rgba(67, 66, 93, 0.4);
+            color: rgba(35, 156, 129, 0.4);
             input,
             textarea {
                 width: 100%;
@@ -59,8 +56,12 @@ h1 {
                 padding: 0 0;
                 font-size: 16px;
                 font-weight: 200;
-                color: rgba(67, 66, 93, 1);
+                color: rgba(35, 156, 129, 1);
             }
+        }
+        span.title {
+            font-weight: 600 !important;
+            text-align: left !important;
         }
         form {
             width: 100%;
@@ -82,7 +83,7 @@ h1 {
             padding-left: 14px;
             padding-right: 14px;
             padding-bottom: 10px;
-            color: rgba(67, 66, 93, 0.5);
+            color: rgba(35, 156, 129, 0.5);
         }
         button {
             width: 70%;
@@ -90,13 +91,13 @@ h1 {
             border: solid 0;
             max-width: 400px;
             margin-top: 20px;
-            background: #43425D;
+            background: #239c81;
             transition: all linear 0.2s;
-            box-shadow: 0px 10px 20px 0px rgba(67, 66, 93, 0.2);
+            box-shadow: 0px 10px 20px 0px rgba(35, 156, 129, 0.2);
             &:hover {
                 transform: scale(1.05);
-                background: rgb(81, 80, 117);
-                box-shadow: 0px 12px 22px 0px rgba(67, 66, 93, 0.4);
+                background: rgb(35, 156, 156);
+                box-shadow: 0px 12px 22px 0px rgba(35, 156, 129, 0.4);
             }
         }
         .dbl {
@@ -108,7 +109,6 @@ h1 {
             .val {
                 display: block;
                 font-size: 20px;
-                color: #4D4F5C;
                 font-weight: 600;
                 overflow: hidden;
                 text-align: center;
@@ -116,6 +116,7 @@ h1 {
                 padding-right: 14px;
                 padding-bottom: 10px;
                 text-overflow: ellipsis;
+                color: rgb(77, 92, 88);
             }
         }
     }
@@ -160,7 +161,7 @@ h1 {
                 padding-left: 14px;
                 padding-right: 14px;
                 padding-bottom: 10px;
-                color: rgba(67, 66, 93, 0.5);
+                color: rgba(35, 156, 129, 0.5);
             }
             .val {
                 display: block;
@@ -242,14 +243,14 @@ h1 {
     margin: auto auto;
     border-radius: 50%;
     position: relative;
-    background: #F0F2F8;
+    background: rgb(240, 248, 246);
     .txt {
         top: 10%;
         left: 10%;
         width: 80%;
         height: 80%;
         display: flex;
-        color: #4D4F5C;
+        color: rgb(77, 92, 92);
         text-align: center;
         border-radius: 50%;
         position: absolute;
@@ -267,7 +268,7 @@ h1 {
         height: 0;
         width: 100%;
         position: absolute;
-        background: rgb(165, 162, 251);
+        background: rgb(162, 251, 246);
     }
 }
 

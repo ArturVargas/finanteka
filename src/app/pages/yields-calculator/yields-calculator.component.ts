@@ -32,8 +32,8 @@ export class YieldsCalculatorComponent implements OnInit {
   public ChartColor: Color[] = [
     {
       borderWidth: 2,
-      backgroundColor: 'rgba(165, 162, 251, 0.3)',
-      borderColor: 'rgba(165, 162, 251, 1)'
+      backgroundColor: 'rgba(35, 156, 129, 0.3)',
+      borderColor: 'rgba(35, 156, 129, 1)'
     }
   ] 
   public ChartData: ChartDataSets[] = [
@@ -55,7 +55,7 @@ export class YieldsCalculatorComponent implements OnInit {
   ngOnInit() {
     var ctx = document.getElementsByTagName('canvas')[0].getContext("2d");
     this.GradientFill = ctx.createLinearGradient(0, 0, 0, 300);
-    this.GradientFill.addColorStop(0, "rgba( 165, 162, 251, 0.6)");
+    this.GradientFill.addColorStop(0, "rgba( 35, 156, 129, 0.6)");
     this.GradientFill.addColorStop(1, "rgba( 255, 255, 255, 0)");
     this.ChartColor[0].backgroundColor = this.GradientFill;
     //this.calcular([0,0,0,0,0,0]);

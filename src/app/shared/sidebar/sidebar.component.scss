@@ -3,7 +3,7 @@
     height: 100%;
     min-width: 320px;
     position: absolute;
-    background: #F0F0F7;
+    background: rgb(240, 247, 246);
 }
 
 nav {
@@ -106,7 +106,7 @@ nav {
     width: 220px;
     overflow: hidden;
     position: absolute;
-    background: linear-gradient(45deg, rgb(84, 82, 117) 0%, #43425D 100%);
+    background: linear-gradient(45deg, rgb(35, 156, 156) 0%, #239c81 100%);
     button {
         width: 50px;
         height: 60px;
@@ -158,7 +158,7 @@ nav {
             &.active {
                 background: rgba( 1, 1, 1, 0.2);
                 svg {
-                    fill: #A3A0FB;
+                    fill: #a0fbe4;
                 }
                 &::before {
                     top: 0;
@@ -167,7 +167,7 @@ nav {
                     content: "";
                     height: 50px;
                     position: absolute;
-                    background: #A3A0FB;
+                    background: #a0fbe4;
                 }
             }
             svg {
@@ -232,13 +232,13 @@ nav {
         width: 100%;
         font-size: 13px;
         border: solid 0;
-        color: #4D565C;
+        color: rgb(77, 92, 90);
     }
     hr {
         width: 80%;
         opacity: .5;
         margin: 0 auto;
-        background: #F1F1F3;
+        background: rgb(241, 243, 243);
     }
 }
 

@@ -2,17 +2,7 @@ nav {
     width: 100%;
     z-index: 600;
     height: 0px; /* 100 */
-    position: fixed;
-    &::before {
-        left: 0px;
-        top: -1px;
-        z-index: -1;
-        height: 1px;
-        content: "";
-        width: 100%;
-        position: absolute;
-        box-shadow: 0px 0px 100px 80px rgb(56, 51, 139);
-    }
+    position: absolute;
     .cnt {
         height: 35px;
         margin-top: calc(50px - 17.5px);
