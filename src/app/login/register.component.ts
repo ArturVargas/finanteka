@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import { AuthService } from '../services/services.index';
 import { User } from '../models/user.model';
 import { Router } from '@angular/router';
-
+const eva = require('eva-icons');
 
 @Component({
   selector: 'app-register',
@@ -18,6 +18,7 @@ export class RegisterComponent implements OnInit {
   constructor( public authSvc: AuthService, public router: Router) { }
 
   ngOnInit() {
+    eva.replace();
     this.registerForm = new FormGroup({
       nombre: new FormControl('', [Validators.required, Validators.minLength(3)]),
       email: new FormControl('', [Validators.required, Validators.email]),

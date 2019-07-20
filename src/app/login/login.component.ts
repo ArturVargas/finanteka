@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { AuthService } from '../services/services.index';
 import { User } from '../models/user.model';
+const eva = require('eva-icons');
 
 declare const gapi: any;
 
@@ -24,6 +25,7 @@ export class LoginComponent implements OnInit {
    }
 
   ngOnInit() {
+    eva.replace();
     //this.googleInit();
     this.email = localStorage.getItem('email') || '';
     if(this.email.length > 1) {
