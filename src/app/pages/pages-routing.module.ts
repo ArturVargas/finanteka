@@ -9,6 +9,7 @@ import { InvestInfoComponent } from './invest-info/invest-info.component';
 import { ProyectsComponent } from './proyects/proyects.component';
 import { ProfileComponent } from './profile/profile.component';
 import { AuthGuardGuard } from '../services/services.index';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 const routes: Routes = [
   { path: 'home', component: HomeComponent },
@@ -20,10 +21,12 @@ const routes: Routes = [
     { path: 'invest', component: InvestInfoComponent },
     { path: 'proyects', component: ProyectsComponent },
     { path: 'profile', component: ProfileComponent },
-    { path: '', pathMatch:'full', redirectTo:'/dashboard/invest'}
+    { path: '', pathMatch:'full', redirectTo:'/dashboard/invest'},
+    { path:'**', component: NotFoundComponent}
   ] },
   
-  { path:'', pathMatch:'full', redirectTo:'/home' }
+  { path:'', pathMatch:'full', redirectTo:'/home' },
+  { path:'**', component: NotFoundComponent}
 ];
 
 @NgModule({

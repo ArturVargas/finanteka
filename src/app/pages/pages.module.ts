@@ -21,6 +21,7 @@ import { ProyectsComponent } from './proyects/proyects.component';
 import { ProfileComponent } from './profile/profile.component';
 import { InvestInfoComponent } from './invest-info/invest-info.component';
 import { FundedProyectsComponent } from './funded-proyects/funded-proyects.component';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { FundedProyectsComponent } from './funded-proyects/funded-proyects.compo
     ProyectsComponent,
     ProfileComponent,
     InvestInfoComponent,
-    FundedProyectsComponent
+    FundedProyectsComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
